@@ -18,7 +18,7 @@ const Contact = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: Mail, title: "Email Us", detail: "contact@techvision.com" },
+              { icon: Mail, title: "Email Us", detail: "contact@goaurex.com" },
               { icon: Phone, title: "Call Us", detail: "+1 (555) 123-4567" },
               { icon: MapPin, title: "Visit Us", detail: "123 Tech Street, Silicon Valley" }
             ].map((item, index) => (

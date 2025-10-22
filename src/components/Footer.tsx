@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
-              TechVision
+              GoAurex
             </h3>
             <p className="text-muted-foreground text-sm">
               Transforming businesses through innovative IT solutions and cutting-edge technology.
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} TechVision Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} GoAurex. All rights reserved.</p>
         </div>
       </div>
     </footer>

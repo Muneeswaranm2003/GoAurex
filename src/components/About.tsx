@@ -16,7 +16,7 @@ const About = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">TechVision</span>
+              Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">GoAurex</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               We combine technical excellence with business insight to deliver solutions that truly make a difference
