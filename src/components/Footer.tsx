@@ -53,8 +53,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} GoAurex. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</a>
+            <a href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</a>
+          </div>
         </div>
       </div>
     </footer>
