@@ -28,15 +28,7 @@ const Hero = () => {
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">GoAurex harnesses the power of Artificial Intelligence to transform your data management, automate cloud operations, and deliver hyper-personalized customer engagement.</p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all text-lg px-8 py-6 group">
-              Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6">
-              Schedule Consultation
-            </Button>
-          </div>
+          
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-3xl mx-auto">
