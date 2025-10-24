@@ -1,17 +1,17 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Services from "@/components/Services";
 
-const Index = () => {
+const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
-        <Hero />
+      <main className="pt-16">
+        <Services />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default ServicesPage;
