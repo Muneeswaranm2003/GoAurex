@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,22 +10,22 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <a href="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               GoAurex
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/services" className="text-foreground hover:text-primary transition-colors">
+            <a href="#services" className="text-foreground hover:text-primary transition-colors">
               Services
-            </Link>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors">
+            </a>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors">
               About
-            </Link>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
+            </a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
-            </Link>
+            </a>
             <Button className="bg-gradient-primary hover:shadow-glow transition-all">
               Get Started
             </Button>
@@ -45,15 +44,15 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <Link to="/services" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              <a href="#services" className="text-foreground hover:text-primary transition-colors">
                 Services
-              </Link>
-              <Link to="/about" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              </a>
+              <a href="#about" className="text-foreground hover:text-primary transition-colors">
                 About
-              </Link>
-              <Link to="/contact" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              </a>
+              <a href="#contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
-              </Link>
+              </a>
               <Button className="bg-gradient-primary hover:shadow-glow transition-all w-full">
                 Get Started
               </Button>
