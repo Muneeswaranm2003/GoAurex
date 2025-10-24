@@ -1,10 +1,10 @@
 import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
-  "Industry-leading expertise with 15+ years of experience",
+  "AI-powered solutions with advanced machine learning capabilities",
   "Tailored solutions designed for your unique business needs",
   "24/7 dedicated support and maintenance",
-  "Proven track record with 500+ satisfied clients",
+  "Trusted by 500+ businesses leveraging AI transformation",
   "Cutting-edge technology and best practices",
   "Transparent pricing with no hidden costs"
 ];
