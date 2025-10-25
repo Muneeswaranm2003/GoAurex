@@ -54,7 +54,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{
           animationDelay: "0.2s"
         }}>
-            GoAurex empowers enterprises with intelligent automation, seamless cloud integration, and data-driven insights that drive measurable growth.
+            Transform your business with cutting-edge AI solutions. We deliver intelligent automation and advanced machine learning that accelerates innovation and maximizes ROI.
           </p>
 
           {/* CTA Buttons */}
