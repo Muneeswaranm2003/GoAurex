@@ -45,10 +45,8 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up" style={{
           animationDelay: "0.1s"
         }}>
-            <span className="block">Innovate. Automate. Elevate</span>
-            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">
-              with AI Technology
-            </span>
+            Elevate Your Business with
+            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">AI Technology</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{
