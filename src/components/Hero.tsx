@@ -45,9 +45,9 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up" style={{
           animationDelay: "0.1s"
         }}>
-            Elevate Your Business with
+            Innovate. Automate. Elevate
             <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">
-              Next-Gen AI Technology
+              with AI Technology
             </span>
           </h1>
           
