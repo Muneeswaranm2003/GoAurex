@@ -23,9 +23,6 @@ const Navbar = () => {
             <a href="#about" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
-            <a href="/careers" className="text-foreground hover:text-primary transition-colors">
-              Careers
-            </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
@@ -52,9 +49,6 @@ const Navbar = () => {
               </a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">
                 About
-              </a>
-              <a href="/careers" className="text-foreground hover:text-primary transition-colors">
-                Careers
               </a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
