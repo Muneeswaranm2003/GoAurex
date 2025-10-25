@@ -17,14 +17,17 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">
+            <a href="/services" className="text-foreground hover:text-primary transition-colors">
               Services
             </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
+            <a href="/about" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            <a href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
+            </a>
+            <a href="/careers" className="text-foreground hover:text-primary transition-colors">
+              Careers
             </a>
             <Button className="bg-gradient-primary hover:shadow-glow transition-all">
               Get Started
@@ -44,14 +47,17 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors">
+              <a href="/services" className="text-foreground hover:text-primary transition-colors">
                 Services
               </a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">
+              <a href="/about" className="text-foreground hover:text-primary transition-colors">
                 About
               </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+              <a href="/contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
+              </a>
+              <a href="/careers" className="text-foreground hover:text-primary transition-colors">
+                Careers
               </a>
               <Button className="bg-gradient-primary hover:shadow-glow transition-all w-full">
                 Get Started

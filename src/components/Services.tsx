@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Database, Cloud, Mail, BarChart3 } from "lucide-react";
 
 const services = [
@@ -56,7 +57,7 @@ const Services = () => {
                 <CardDescription className="text-base">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
@@ -64,6 +65,13 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.location.href = '/services'}
+                >
+                  Learn More
+                </Button>
               </CardContent>
             </Card>
           ))}
