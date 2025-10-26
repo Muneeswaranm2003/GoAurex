@@ -8,8 +8,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-2">
-              <img src={logo} alt="GoAurex Logo" className="h-10 w-auto" />
+            <a href="/" className="flex items-center">
+              <img src={logo} alt="GoAurex" className="h-8" />
             </a>
           </div>
 
