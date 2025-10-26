@@ -42,7 +42,7 @@ const Hero = () => {
             <span className="text-sm font-medium bg-gradient-primary bg-clip-text text-transparent">AI-Powered Solutions</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up" style={{
+          <h1 className="text-5xl md:text-7xl font-bold mb-12 leading-tight animate-fade-in-up" style={{
           animationDelay: "0.1s"
         }}>
             Elevate Your Business with
@@ -50,7 +50,7 @@ const Hero = () => {
           </h1>
           
           {/* Feature Pills */}
-          <div className="flex flex-wrap gap-4 justify-center mb-8 animate-fade-in" style={{
+          <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in" style={{
           animationDelay: "0.2s"
         }}>
             {[{
@@ -71,7 +71,7 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-32 animate-scale-in" style={{
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-40 animate-scale-in" style={{
           animationDelay: "0.3s"
         }}>
             <Button size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-50 px-8 py-6 group animate-glow-pulse text-lg">
