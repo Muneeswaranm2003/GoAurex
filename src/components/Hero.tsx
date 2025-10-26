@@ -49,24 +49,9 @@ const Hero = () => {
             <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">Next-Gen AI</span>
           </h1>
           
-          
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-scale-in" style={{
-          animationDelay: "0.3s"
-        }}>
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-50 px-8 py-6 group animate-glow-pulse text-lg">
-              Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-lg px-8 py-6">
-              Schedule Consultation
-            </Button>
-          </div>
-
           {/* Feature Pills */}
-          <div className="flex flex-wrap gap-4 justify-center mb-32 animate-fade-in" style={{
-          animationDelay: "0.4s"
+          <div className="flex flex-wrap gap-4 justify-center mb-8 animate-fade-in" style={{
+          animationDelay: "0.2s"
         }}>
             {[{
             icon: Zap,
@@ -83,6 +68,19 @@ const Hero = () => {
                 <feature.icon className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">{feature.text}</span>
               </div>)}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-32 animate-scale-in" style={{
+          animationDelay: "0.3s"
+        }}>
+            <Button size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-50 px-8 py-6 group animate-glow-pulse text-lg">
+              Explore Our Services
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-lg px-8 py-6">
+              Schedule Consultation
+            </Button>
           </div>
 
           {/* Stats */}
