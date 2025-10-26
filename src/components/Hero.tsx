@@ -49,11 +49,7 @@ const Hero = () => {
             <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">Next-Gen AI</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{
-          animationDelay: "0.2s"
-        }}>
-            Transform your business with AI-powered automation and intelligent solutions that drive real results.
-          </p>
+          
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-scale-in" style={{
