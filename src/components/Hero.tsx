@@ -45,8 +45,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up" style={{
           animationDelay: "0.1s"
         }}>
-            Elevate Your Business with
-            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">Next-Gen AI</span>
+            Elevate Your Business with AI Technology
           </h1>
           
           
@@ -65,7 +64,7 @@ const Hero = () => {
           </div>
 
           {/* Feature Pills */}
-          <div className="flex flex-wrap gap-4 justify-center mb-32 animate-fade-in" style={{
+          <div className="flex flex-wrap gap-4 justify-center mb-8 animate-fade-in" style={{
           animationDelay: "0.4s"
         }}>
             {[{
@@ -83,6 +82,13 @@ const Hero = () => {
                 <feature.icon className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">{feature.text}</span>
               </div>)}
+          </div>
+
+          {/* Next-Gen AI Text */}
+          <div className="mb-32 animate-scale-in" style={{ animationDelay: "0.5s" }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
+              Next-Gen AI
+            </h2>
           </div>
 
           {/* Stats */}
