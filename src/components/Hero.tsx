@@ -85,11 +85,11 @@ const Hero = () => {
           </div>
 
           {/* Next-Gen AI Text */}
-          <h2 className="text-4xl md:text-6xl font-bold mb-32 animate-fade-in-up" style={{
-          animationDelay: "0.6s"
-        }}>
-            <span className="bg-gradient-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">Next-Gen AI</span>
-          </h2>
+          <div className="mb-32 animate-scale-in" style={{ animationDelay: "0.5s" }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
+              Next-Gen AI
+            </h2>
+          </div>
 
           {/* Stats */}
           
