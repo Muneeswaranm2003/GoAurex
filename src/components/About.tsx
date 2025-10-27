@@ -11,7 +11,7 @@ const benefits = [
 
 const About = () => {
   return (
-    <section id="about" className="py-20 lg:py-32 bg-background relative">
+    <section id="about" className="py-20 lg:py-32 relative" style={{ backgroundColor: 'hsl(var(--section-dark))' }}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
