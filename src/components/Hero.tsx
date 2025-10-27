@@ -9,13 +9,13 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax */}
-      <div className="absolute inset-0 z-0 bg-background" style={{
+      <div className="absolute inset-0 z-0" style={{
       transform: `translateY(${scrollY * 0.5}px)`
     }}>
         <img src={heroImage} alt="Tech visualization background showcasing AI and cloud solutions" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 to-background" />
+        <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
       {/* Animated Grid Pattern Overlay */}

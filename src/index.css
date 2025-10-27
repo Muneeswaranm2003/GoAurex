@@ -38,10 +38,6 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
-    /* Section backgrounds */
-    --section-light: 0 0% 98%;
-    --section-dark: 0 0% 5%;
-    
     /* Custom design tokens */
     --gradient-primary: linear-gradient(135deg, hsl(20 100% 50%), hsl(15 90% 45%));
     --gradient-accent: linear-gradient(135deg, hsl(25 100% 60%), hsl(20 100% 50%));
