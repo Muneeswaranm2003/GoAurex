@@ -3,6 +3,11 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 const blogPosts = [
   {
@@ -125,6 +130,37 @@ const blogPosts = [
 ];
 
 const Blog = () => {
+  const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes("@")) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Simulate subscription (you can integrate with your backend here)
+    setTimeout(() => {
+      toast({
+        title: "Successfully Subscribed!",
+        description: "Thank you for subscribing to our newsletter. You'll receive our latest updates in your inbox.",
+      });
+      setEmail("");
+      setIsSubscribeOpen(false);
+      setIsSubmitting(false);
+    }, 1000);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -177,12 +213,40 @@ const Blog = () => {
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Subscribe to our newsletter to receive the latest insights, articles, and updates directly in your inbox.
             </p>
-            <Button size="lg" onClick={() => window.location.href = '/contact'}>
+            <Button size="lg" onClick={() => setIsSubscribeOpen(true)}>
               Subscribe Now
             </Button>
           </div>
         </div>
       </main>
+      
+      <Dialog open={isSubscribeOpen} onOpenChange={setIsSubscribeOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Subscribe to Our Newsletter</DialogTitle>
+            <DialogDescription>
+              Enter your email address to receive our latest blog posts and updates.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubscribe} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">Email Address</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="your.email@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Subscribing..." : "Subscribe Now"}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
+      
       <Footer />
     </div>
   );
