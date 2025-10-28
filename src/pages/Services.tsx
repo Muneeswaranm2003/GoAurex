@@ -1,8 +1,27 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Database, Cloud, Mail, BarChart3, CheckCircle2, Server, Container, Boxes, Zap, Code, PieChart, Users } from "lucide-react";
+import { Database, Cloud, Mail, BarChart3, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import awsLogo from "@/assets/logos/aws.png";
+import azureLogo from "@/assets/logos/azure.png";
+import gcpLogo from "@/assets/logos/gcp.png";
+import terraformLogo from "@/assets/logos/terraform.png";
+import dockerLogo from "@/assets/logos/docker.png";
+import kubernetesLogo from "@/assets/logos/kubernetes.png";
+import mysqlLogo from "@/assets/logos/mysql.png";
+import postgresqlLogo from "@/assets/logos/postgresql.png";
+import mongodbLogo from "@/assets/logos/mongodb.png";
+import sparkLogo from "@/assets/logos/spark.png";
+import pythonLogo from "@/assets/logos/python.png";
+import tableauLogo from "@/assets/logos/tableau.png";
+import powerbiLogo from "@/assets/logos/powerbi.png";
+import hubspotLogo from "@/assets/logos/hubspot.png";
+import sendgridLogo from "@/assets/logos/sendgrid.png";
+import elasticemailLogo from "@/assets/logos/elasticemail.png";
+import zohoLogo from "@/assets/logos/zoho.png";
+import salesforceLogo from "@/assets/logos/salesforce.png";
+import apolloLogo from "@/assets/logos/apollo.png";
 
 const services = [
   {
@@ -105,25 +124,25 @@ const Services = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
-                  { name: "AWS", category: "Cloud", icon: Cloud },
-                  { name: "Azure", category: "Cloud", icon: Cloud },
-                  { name: "Google Cloud", category: "Cloud", icon: Cloud },
-                  { name: "Terraform", category: "DevOps", icon: Server },
-                  { name: "Docker", category: "DevOps", icon: Container },
-                  { name: "Kubernetes", category: "DevOps", icon: Boxes },
-                  { name: "MySQL", category: "Database", icon: Database },
-                  { name: "PostgreSQL", category: "Database", icon: Database },
-                  { name: "MongoDB", category: "Database", icon: Database },
-                  { name: "Apache Spark", category: "Big Data", icon: Zap },
-                  { name: "Python", category: "Analytics", icon: Code },
-                  { name: "Tableau", category: "Visualization", icon: PieChart },
-                  { name: "Power BI", category: "Visualization", icon: BarChart3 },
-                  { name: "HubSpot", category: "Email Marketing", icon: Mail },
-                  { name: "SendGrid", category: "Email Marketing", icon: Mail },
-                  { name: "Elastic Email", category: "Email Marketing", icon: Mail },
-                  { name: "Zoho", category: "CRM Tools", icon: Users },
-                  { name: "Salesforce", category: "CRM Tools", icon: Users },
-                  { name: "Apollo", category: "CRM Tools", icon: Users },
+                  { name: "AWS", category: "Cloud", logo: awsLogo },
+                  { name: "Azure", category: "Cloud", logo: azureLogo },
+                  { name: "Google Cloud", category: "Cloud", logo: gcpLogo },
+                  { name: "Terraform", category: "DevOps", logo: terraformLogo },
+                  { name: "Docker", category: "DevOps", logo: dockerLogo },
+                  { name: "Kubernetes", category: "DevOps", logo: kubernetesLogo },
+                  { name: "MySQL", category: "Database", logo: mysqlLogo },
+                  { name: "PostgreSQL", category: "Database", logo: postgresqlLogo },
+                  { name: "MongoDB", category: "Database", logo: mongodbLogo },
+                  { name: "Apache Spark", category: "Big Data", logo: sparkLogo },
+                  { name: "Python", category: "Analytics", logo: pythonLogo },
+                  { name: "Tableau", category: "Visualization", logo: tableauLogo },
+                  { name: "Power BI", category: "Visualization", logo: powerbiLogo },
+                  { name: "HubSpot", category: "Email Marketing", logo: hubspotLogo },
+                  { name: "SendGrid", category: "Email Marketing", logo: sendgridLogo },
+                  { name: "Elastic Email", category: "Email Marketing", logo: elasticemailLogo },
+                  { name: "Zoho", category: "CRM Tools", logo: zohoLogo },
+                  { name: "Salesforce", category: "CRM Tools", logo: salesforceLogo },
+                  { name: "Apollo", category: "CRM Tools", logo: apolloLogo },
                 ].map((tech, idx) => (
                   <Card 
                     key={idx} 
@@ -131,8 +150,8 @@ const Services = () => {
                   >
                     <div className="space-y-3">
                       <div className="flex justify-center">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:shadow-glow transition-all">
-                          <tech.icon className="h-5 w-5 text-primary-foreground" />
+                        <div className="w-16 h-16 rounded-lg bg-background flex items-center justify-center group-hover:shadow-glow transition-all p-2">
+                          <img src={tech.logo} alt={`${tech.name} logo`} className="w-full h-full object-contain" />
                         </div>
                       </div>
                       <div className="space-y-1">
