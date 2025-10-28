@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 const Contact = () => {
-  return <section id="contact" className="py-20 lg:py-32 relative">
+  return <section id="contact" className="pt-20 lg:pt-32 pb-10 lg:pb-16 relative">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
