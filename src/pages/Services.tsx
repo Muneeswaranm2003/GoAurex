@@ -3,6 +3,25 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Database, Cloud, Mail, BarChart3, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import awsLogo from "@/assets/logos/aws.png";
+import azureLogo from "@/assets/logos/azure.png";
+import gcpLogo from "@/assets/logos/gcp.png";
+import terraformLogo from "@/assets/logos/terraform.png";
+import dockerLogo from "@/assets/logos/docker.png";
+import kubernetesLogo from "@/assets/logos/kubernetes.png";
+import mysqlLogo from "@/assets/logos/mysql.png";
+import postgresqlLogo from "@/assets/logos/postgresql.png";
+import mongodbLogo from "@/assets/logos/mongodb.png";
+import sparkLogo from "@/assets/logos/spark.png";
+import pythonLogo from "@/assets/logos/python.png";
+import tableauLogo from "@/assets/logos/tableau.png";
+import powerbiLogo from "@/assets/logos/powerbi.png";
+import hubspotLogo from "@/assets/logos/hubspot.png";
+import sendgridLogo from "@/assets/logos/sendgrid.png";
+import elasticemailLogo from "@/assets/logos/elasticemail.png";
+import zohoLogo from "@/assets/logos/zoho.png";
+import salesforceLogo from "@/assets/logos/salesforce.png";
+import apolloLogo from "@/assets/logos/apollo.png";
 
 const services = [
   {
@@ -96,52 +115,54 @@ const Services = () => {
             <div className="mt-20">
               <div className="text-center mb-12">
                 <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                  Tools & <span className="bg-gradient-primary bg-clip-text text-transparent">Technologies</span>
+                  Tools & <span className="bg-gradient-primary bg-clip-text text-transparent">Technologies Used</span>
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   We leverage cutting-edge tools and platforms to deliver exceptional results
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
-                  { name: "AWS", icon: Cloud },
-                  { name: "Azure", icon: Cloud },
-                  { name: "Google Cloud", icon: Cloud },
-                  { name: "Terraform", icon: Database },
-                  { name: "Docker", icon: Database },
-                  { name: "Kubernetes", icon: Database },
-                  { name: "MySQL", icon: Database },
-                  { name: "PostgreSQL", icon: Database },
-                  { name: "MongoDB", icon: Database },
-                  { name: "Apache Spark", icon: BarChart3 },
-                  { name: "Python", icon: BarChart3 },
-                  { name: "Tableau", icon: BarChart3 },
-                  { name: "Power BI", icon: BarChart3 },
-                  { name: "HubSpot", icon: Mail },
-                  { name: "SendGrid", icon: Mail },
-                  { name: "Elastic Email", icon: Mail },
-                  { name: "Zoho", icon: Database },
-                  { name: "Salesforce", icon: Database },
-                  { name: "Apollo", icon: Database },
-                ].map((tech, idx) => {
-                  const IconComponent = tech.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="group relative aspect-square bg-card/30 backdrop-blur-sm border border-border rounded-lg p-6 hover:border-primary transition-all duration-300 hover:shadow-elegant flex items-center justify-center overflow-hidden animate-fade-in"
-                      style={{ animationDelay: `${idx * 30}ms` }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                      <div className="relative z-10 flex flex-col items-center justify-center gap-3">
-                        <IconComponent className="h-8 w-8 text-muted-foreground group-hover:text-primary transition-colors duration-300 group-hover:scale-110 transform" />
-                        <span className="text-xs font-medium text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-3">
+                  { name: "AWS", category: "Cloud", logo: awsLogo },
+                  { name: "Azure", category: "Cloud", logo: azureLogo },
+                  { name: "Google Cloud", category: "Cloud", logo: gcpLogo },
+                  { name: "Terraform", category: "DevOps", logo: terraformLogo },
+                  { name: "Docker", category: "DevOps", logo: dockerLogo },
+                  { name: "Kubernetes", category: "DevOps", logo: kubernetesLogo },
+                  { name: "MySQL", category: "Database", logo: mysqlLogo },
+                  { name: "PostgreSQL", category: "Database", logo: postgresqlLogo },
+                  { name: "MongoDB", category: "Database", logo: mongodbLogo },
+                  { name: "Apache Spark", category: "Big Data", logo: sparkLogo },
+                  { name: "Python", category: "Analytics", logo: pythonLogo },
+                  { name: "Tableau", category: "Visualization", logo: tableauLogo },
+                  { name: "Power BI", category: "Visualization", logo: powerbiLogo },
+                  { name: "HubSpot", category: "Email Marketing", logo: hubspotLogo },
+                  { name: "SendGrid", category: "Email Marketing", logo: sendgridLogo },
+                  { name: "Elastic Email", category: "Email Marketing", logo: elasticemailLogo },
+                  { name: "Zoho", category: "CRM Tools", logo: zohoLogo },
+                  { name: "Salesforce", category: "CRM Tools", logo: salesforceLogo },
+                  { name: "Apollo", category: "CRM Tools", logo: apolloLogo },
+                ].map((tech, idx) => (
+                  <Card 
+                    key={idx} 
+                    className="bg-card/30 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group text-center p-6"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex justify-center">
+                        <div className="w-16 h-16 rounded-lg bg-background flex items-center justify-center group-hover:shadow-glow transition-all p-2">
+                          <img src={tech.logo} alt={`${tech.name} logo`} className="w-full h-full object-contain" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                           {tech.name}
-                        </span>
+                        </h4>
+                        <p className="text-xs text-muted-foreground">{tech.category}</p>
                       </div>
                     </div>
-                  );
-                })}
+                  </Card>
+                ))}
               </div>
             </div>
 
