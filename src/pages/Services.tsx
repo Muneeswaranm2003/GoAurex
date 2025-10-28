@@ -105,21 +105,25 @@ const Services = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
-                  { name: "AWS", category: "Cloud Platform" },
-                  { name: "Azure", category: "Cloud Platform" },
-                  { name: "Google Cloud", category: "Cloud Platform" },
+                  { name: "AWS", category: "Cloud" },
+                  { name: "Azure", category: "Cloud" },
+                  { name: "Google Cloud", category: "Cloud" },
+                  { name: "Apache Spark", category: "Big Data" },
+                  { name: "Terraform", category: "DevOps" },
+                  { name: "Docker", category: "DevOps" },
+                  { name: "Kubernetes", category: "DevOps" },
+                  { name: "MySQL", category: "Database" },
                   { name: "PostgreSQL", category: "Database" },
                   { name: "MongoDB", category: "Database" },
-                  { name: "React", category: "Frontend" },
-                  { name: "Node.js", category: "Backend" },
                   { name: "Python", category: "Analytics" },
                   { name: "Tableau", category: "Visualization" },
                   { name: "Power BI", category: "Visualization" },
-                  { name: "Docker", category: "DevOps" },
-                  { name: "Kubernetes", category: "DevOps" },
-                  { name: "Mailchimp", category: "Email Marketing" },
                   { name: "HubSpot", category: "Email Marketing" },
-                  { name: "Apache Spark", category: "Big Data" },
+                  { name: "SendGrid", category: "Email Marketing" },
+                  { name: "Elastic Email", category: "Email Marketing" },
+                  { name: "Zoho", category: "CRM Tools" },
+                  { name: "Salesforce", category: "CRM Tools" },
+                  { name: "Apollo", category: "CRM Tools" },
                 ].map((tech, idx) => (
                   <Card 
                     key={idx} 
