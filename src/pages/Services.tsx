@@ -35,17 +35,17 @@ const services = [
   },
   {
     icon: Mail,
-    title: "Digital Marketing Automation",
-    description: "Data-driven email marketing strategies with advanced automation, segmentation, and multi-channel campaign orchestration.",
+    title: "Email Marketing Solutions",
+    description: "Comprehensive email marketing services with strategic campaign design, automation workflows, and performance optimization.",
     features: [
-      "Marketing Automation Platform Setup",
-      "Personalized Campaign Strategy",
-      "Advanced Segmentation & Targeting",
-      "A/B Testing & Optimization",
-      "Lead Nurturing Workflows",
-      "CRM Integration & Synchronization"
+      "Email Campaign Strategy & Design",
+      "Marketing Automation Workflows",
+      "List Segmentation & Personalization",
+      "Deliverability & Inbox Optimization",
+      "A/B Testing & Performance Analytics",
+      "ESP Integration & Management"
     ],
-    details: "Elevate your marketing efforts with our comprehensive digital marketing automation services. We implement and optimize enterprise marketing platforms like HubSpot, Marketo, and Salesforce Marketing Cloud to deliver personalized customer experiences at scale. Our team designs sophisticated automation workflows, develops targeted segmentation strategies, and creates compelling campaign content that drives engagement. With advanced analytics and continuous optimization, we help you maximize ROI, improve conversion rates, and build lasting customer relationships."
+    details: "Transform your email marketing with our end-to-end email solutions. We develop targeted email campaigns that drive engagement and conversions, implement sophisticated automation workflows for lead nurturing, and optimize deliverability to ensure your messages reach the inbox. Our expertise spans major email service providers including SendGrid, HubSpot, and Elastic Email. From list building and segmentation to advanced analytics and compliance management, we help you build meaningful customer relationships and maximize email ROI through data-driven strategies and continuous optimization."
   },
   {
     icon: BarChart3,
