@@ -7,31 +7,59 @@ import { Button } from "@/components/ui/button";
 const services = [
   {
     icon: Database,
-    title: "Data Solutions",
-    description: "Comprehensive data management, analytics, and integration services to unlock the full potential of your business data.",
-    features: ["Data Warehousing", "ETL Processes", "Data Migration", "Database Optimization"],
-    details: "Our data solutions help businesses transform raw data into actionable insights. We specialize in building robust data warehouses, implementing efficient ETL processes, seamless data migration, and optimizing database performance for maximum efficiency. Whether you're dealing with structured or unstructured data, our team ensures your data infrastructure is scalable, secure, and ready for the future."
+    title: "Enterprise Data Management",
+    description: "End-to-end data solutions that transform raw information into strategic business assets with advanced analytics and AI-powered insights.",
+    features: [
+      "Data Warehouse Architecture & Implementation",
+      "Advanced ETL/ELT Pipeline Development", 
+      "Master Data Management (MDM)",
+      "Data Quality & Governance",
+      "Big Data Processing & Analytics",
+      "Data Lake Design & Optimization"
+    ],
+    details: "Our enterprise data management services empower organizations to harness the full potential of their data assets. We architect and implement scalable data warehouses using industry-leading platforms, design efficient ETL/ELT pipelines for seamless data integration, and establish robust data governance frameworks. From data quality assessment to master data management, we ensure your data is accurate, consistent, and accessible across your organization, enabling data-driven decision-making at every level."
   },
   {
     icon: Cloud,
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and migration services designed to enhance performance, security, and flexibility.",
-    features: ["Cloud Migration", "AWS/Azure/GCP", "DevOps Integration", "Cloud Security"],
-    details: "Transform your infrastructure with our cloud solutions. We provide end-to-end cloud migration services across AWS, Azure, and GCP platforms. Our DevOps integration ensures seamless deployment and continuous delivery, while our cloud security measures protect your assets. Experience improved scalability, reduced costs, and enhanced performance with our tailored cloud strategies."
+    title: "Cloud Infrastructure & DevOps",
+    description: "Comprehensive cloud solutions with multi-cloud expertise, infrastructure automation, and enterprise-grade security implementations.",
+    features: [
+      "Multi-Cloud Architecture (AWS, Azure, GCP)",
+      "Cloud Migration & Modernization",
+      "Infrastructure as Code (IaC)",
+      "CI/CD Pipeline Implementation",
+      "Container Orchestration (Kubernetes)",
+      "Cloud Cost Optimization"
+    ],
+    details: "Accelerate your digital transformation with our cloud infrastructure and DevOps services. We design and implement secure, scalable cloud architectures across AWS, Azure, and Google Cloud Platform. Our expertise includes containerization with Docker and Kubernetes, infrastructure automation using Terraform and CloudFormation, and building robust CI/CD pipelines. We help organizations reduce operational costs, improve deployment velocity, and enhance system reliability through modern DevOps practices and cloud-native technologies."
   },
   {
     icon: Mail,
-    title: "Email Marketing",
-    description: "Strategic email marketing campaigns that drive engagement, conversions, and customer loyalty at scale.",
-    features: ["Campaign Design", "Automation", "Analytics & Reporting", "List Management"],
-    details: "Maximize your email marketing ROI with our strategic campaigns. From eye-catching campaign designs to sophisticated automation workflows, we help you reach the right audience at the right time. Our comprehensive analytics and reporting provide insights into campaign performance, while our list management ensures your messages reach engaged subscribers who convert."
+    title: "Digital Marketing Automation",
+    description: "Data-driven email marketing strategies with advanced automation, segmentation, and multi-channel campaign orchestration.",
+    features: [
+      "Marketing Automation Platform Setup",
+      "Personalized Campaign Strategy",
+      "Advanced Segmentation & Targeting",
+      "A/B Testing & Optimization",
+      "Lead Nurturing Workflows",
+      "CRM Integration & Synchronization"
+    ],
+    details: "Elevate your marketing efforts with our comprehensive digital marketing automation services. We implement and optimize enterprise marketing platforms like HubSpot, Marketo, and Salesforce Marketing Cloud to deliver personalized customer experiences at scale. Our team designs sophisticated automation workflows, develops targeted segmentation strategies, and creates compelling campaign content that drives engagement. With advanced analytics and continuous optimization, we help you maximize ROI, improve conversion rates, and build lasting customer relationships."
   },
   {
     icon: BarChart3,
-    title: "Data Visualization",
-    description: "Transform complex data into intuitive, interactive visualizations that drive informed business decisions.",
-    features: ["Dashboard Design", "BI Tools Integration", "Custom Reports", "Real-time Analytics"],
-    details: "Make data-driven decisions with confidence using our visualization solutions. We create stunning, interactive dashboards that transform complex datasets into clear, actionable insights. Our BI tools integration connects your data sources seamlessly, while custom reports deliver the metrics that matter most to your business. Real-time analytics keep you informed and ahead of the competition."
+    title: "Business Intelligence & Analytics",
+    description: "Advanced analytics solutions that transform complex data into actionable insights through interactive dashboards and predictive modeling.",
+    features: [
+      "Enterprise Dashboard Development",
+      "Self-Service BI Implementation",
+      "Predictive Analytics & ML Models",
+      "Real-Time Data Streaming",
+      "Custom Reporting Solutions",
+      "Data Storytelling & Visualization"
+    ],
+    details: "Unlock the power of your data with our business intelligence and analytics services. We build comprehensive BI solutions using leading platforms like Tableau, Power BI, and Looker, creating intuitive dashboards that provide real-time visibility into your business operations. Our analytics experts develop predictive models using machine learning algorithms, implement self-service analytics capabilities for business users, and design custom reporting solutions tailored to your KPIs. From data visualization to advanced analytics, we help you discover insights that drive strategic decisions and competitive advantage."
   }
 ];
 
@@ -77,12 +105,12 @@ const Services = () => {
                     </p>
                     
                     <div>
-                      <h4 className="font-semibold mb-4 text-lg">Key Features:</h4>
-                      <div className="grid md:grid-cols-2 gap-3">
+                      <h4 className="font-semibold mb-4 text-lg">Key Capabilities:</h4>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                         {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-3 p-3 rounded-lg bg-background/50">
-                            <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
-                            <span className="text-foreground">{feature}</span>
+                          <div key={idx} className="flex items-start space-x-3 p-3 rounded-lg bg-background/50 hover:bg-background transition-colors">
+                            <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-foreground leading-tight">{feature}</span>
                           </div>
                         ))}
                       </div>
