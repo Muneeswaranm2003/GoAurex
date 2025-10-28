@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Database, Cloud, Mail, BarChart3, CheckCircle2 } from "lucide-react";
+import { Database, Cloud, Mail, BarChart3, CheckCircle2, Server, Container, Boxes, Zap, Code, PieChart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -105,35 +105,42 @@ const Services = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
-                  { name: "AWS", category: "Cloud" },
-                  { name: "Azure", category: "Cloud" },
-                  { name: "Google Cloud", category: "Cloud" },
-                  { name: "Terraform", category: "DevOps" },
-                  { name: "Docker", category: "DevOps" },
-                  { name: "Kubernetes", category: "DevOps" },
-                  { name: "MySQL", category: "Database" },
-                  { name: "PostgreSQL", category: "Database" },
-                  { name: "MongoDB", category: "Database" },
-                  { name: "Apache Spark", category: "Big Data" },
-                  { name: "Python", category: "Analytics" },
-                  { name: "Tableau", category: "Visualization" },
-                  { name: "Power BI", category: "Visualization" },
-                  { name: "HubSpot", category: "Email Marketing" },
-                  { name: "SendGrid", category: "Email Marketing" },
-                  { name: "Elastic Email", category: "Email Marketing" },
-                  { name: "Zoho", category: "CRM Tools" },
-                  { name: "Salesforce", category: "CRM Tools" },
-                  { name: "Apollo", category: "CRM Tools" },
+                  { name: "AWS", category: "Cloud", icon: Cloud },
+                  { name: "Azure", category: "Cloud", icon: Cloud },
+                  { name: "Google Cloud", category: "Cloud", icon: Cloud },
+                  { name: "Terraform", category: "DevOps", icon: Server },
+                  { name: "Docker", category: "DevOps", icon: Container },
+                  { name: "Kubernetes", category: "DevOps", icon: Boxes },
+                  { name: "MySQL", category: "Database", icon: Database },
+                  { name: "PostgreSQL", category: "Database", icon: Database },
+                  { name: "MongoDB", category: "Database", icon: Database },
+                  { name: "Apache Spark", category: "Big Data", icon: Zap },
+                  { name: "Python", category: "Analytics", icon: Code },
+                  { name: "Tableau", category: "Visualization", icon: PieChart },
+                  { name: "Power BI", category: "Visualization", icon: BarChart3 },
+                  { name: "HubSpot", category: "Email Marketing", icon: Mail },
+                  { name: "SendGrid", category: "Email Marketing", icon: Mail },
+                  { name: "Elastic Email", category: "Email Marketing", icon: Mail },
+                  { name: "Zoho", category: "CRM Tools", icon: Users },
+                  { name: "Salesforce", category: "CRM Tools", icon: Users },
+                  { name: "Apollo", category: "CRM Tools", icon: Users },
                 ].map((tech, idx) => (
                   <Card 
                     key={idx} 
                     className="bg-card/30 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group text-center p-6"
                   >
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {tech.name}
-                      </h4>
-                      <p className="text-xs text-muted-foreground">{tech.category}</p>
+                    <div className="space-y-3">
+                      <div className="flex justify-center">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:shadow-glow transition-all">
+                          <tech.icon className="h-5 w-5 text-primary-foreground" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {tech.name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground">{tech.category}</p>
+                      </div>
                     </div>
                   </Card>
                 ))}
