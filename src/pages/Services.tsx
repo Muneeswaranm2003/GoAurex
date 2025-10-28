@@ -92,6 +92,50 @@ const Services = () => {
               ))}
             </div>
 
+            {/* Tools & Technologies Section */}
+            <div className="mt-20">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                  Tools & <span className="bg-gradient-primary bg-clip-text text-transparent">Technologies Used</span>
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  We leverage cutting-edge tools and platforms to deliver exceptional results
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                {[
+                  { name: "AWS", category: "Cloud Platform" },
+                  { name: "Azure", category: "Cloud Platform" },
+                  { name: "Google Cloud", category: "Cloud Platform" },
+                  { name: "PostgreSQL", category: "Database" },
+                  { name: "MongoDB", category: "Database" },
+                  { name: "React", category: "Frontend" },
+                  { name: "Node.js", category: "Backend" },
+                  { name: "Python", category: "Analytics" },
+                  { name: "Tableau", category: "Visualization" },
+                  { name: "Power BI", category: "Visualization" },
+                  { name: "Docker", category: "DevOps" },
+                  { name: "Kubernetes", category: "DevOps" },
+                  { name: "Mailchimp", category: "Email Marketing" },
+                  { name: "HubSpot", category: "Email Marketing" },
+                  { name: "Apache Spark", category: "Big Data" },
+                ].map((tech, idx) => (
+                  <Card 
+                    key={idx} 
+                    className="bg-card/30 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group text-center p-6"
+                  >
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {tech.name}
+                      </h4>
+                      <p className="text-xs text-muted-foreground">{tech.category}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             {/* CTA Section */}
             <div className="mt-20 p-12 rounded-2xl bg-gradient-primary relative overflow-hidden">
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAxMmMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAxMmMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnpNMjQgMThjMy4zMTQgMCA2IDIuNjg2IDYgNnMtMi42ODYgNi02IDYtNi0yLjY4Ni02LTYgMi42ODYtNiA2LTZ6bTAgMTJjMy4zMTQgMCA2IDIuNjg2IDYgNnMtMi42ODYgNi02IDYtNi0yLjY4Ni02LTYgMi42ODYtNiA2LTZ6bTAgMTJjMy4zMTQgMCA2IDIuNjg2IDYgNnMtMi42ODYgNi02IDYtNi0yLjY4Ni02LTYgMi42ODYtNiA2LTZ6TTEyIDE4YzMuMzE0IDAgNiAyLjY4NiA2IDZzLTIuNjg2IDYtNiA2LTYtMi42ODYtNi02IDIuNjg2LTYgNi02em0wIDEyYzMuMzE0IDAgNiAyLjY4NiA2IDZzLTIuNjg2IDYtNiA2LTYtMi42ODYtNi02IDIuNjg2LTYgNi02em0wIDEyYzMuMzE0IDAgNiAyLjY4NiA2IDZzLTIuNjg2IDYtNiA2LTYtMi42ODYtNi02IDIuNjg2LTYgNi02eiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuMSIvPjwvZz48L3N2Zz4=')] opacity-20" />
