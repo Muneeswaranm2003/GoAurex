@@ -103,7 +103,7 @@ const Services = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="flex flex-wrap gap-3 justify-center max-w-5xl mx-auto">
                 {[
                   { name: "AWS", category: "Cloud" },
                   { name: "Azure", category: "Cloud" },
@@ -125,17 +125,14 @@ const Services = () => {
                   { name: "Salesforce", category: "CRM Tools" },
                   { name: "Apollo", category: "CRM Tools" },
                 ].map((tech, idx) => (
-                  <Card 
-                    key={idx} 
-                    className="bg-card/30 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group text-center p-6"
+                  <div
+                    key={idx}
+                    className="px-4 py-2 rounded-full bg-card/50 border border-border hover:border-primary hover:bg-card transition-all duration-300 hover:shadow-elegant cursor-default group"
                   >
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {tech.name}
-                      </h4>
-                      <p className="text-xs text-muted-foreground">{tech.category}</p>
-                    </div>
-                  </Card>
+                    <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                      {tech.name}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
