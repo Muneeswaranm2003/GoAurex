@@ -35,17 +35,17 @@ const services = [
   },
   {
     icon: Mail,
-    title: "Email Marketing Solutions",
-    description: "Strategic email marketing campaigns that drive engagement, conversions, and customer loyalty through personalized automation and data-driven insights.",
+    title: "Digital Marketing Automation",
+    description: "Data-driven email marketing strategies with advanced automation, segmentation, and multi-channel campaign orchestration.",
     features: [
-      "Campaign Design & Development",
-      "Email Automation Workflows",
-      "List Segmentation & Management",
-      "Deliverability Optimization",
-      "Performance Analytics & Reporting",
-      "Template Design & Responsive Coding"
+      "Marketing Automation Platform Setup",
+      "Personalized Campaign Strategy",
+      "Advanced Segmentation & Targeting",
+      "A/B Testing & Optimization",
+      "Lead Nurturing Workflows",
+      "CRM Integration & Synchronization"
     ],
-    details: "Transform your email marketing with our comprehensive solutions designed to maximize engagement and ROI. We create compelling email campaigns that resonate with your audience, implement sophisticated automation workflows that nurture leads throughout the customer journey, and develop advanced segmentation strategies to deliver the right message to the right person at the right time. Our expertise includes optimizing deliverability rates, designing mobile-responsive templates, integrating with leading ESP platforms like HubSpot, SendGrid, and Mailchimp, and providing detailed analytics to continuously improve campaign performance and drive measurable business results."
+    details: "Elevate your marketing efforts with our comprehensive digital marketing automation services. We implement and optimize enterprise marketing platforms like HubSpot, Marketo, and Salesforce Marketing Cloud to deliver personalized customer experiences at scale. Our team designs sophisticated automation workflows, develops targeted segmentation strategies, and creates compelling campaign content that drives engagement. With advanced analytics and continuous optimization, we help you maximize ROI, improve conversion rates, and build lasting customer relationships."
   },
   {
     icon: BarChart3,
