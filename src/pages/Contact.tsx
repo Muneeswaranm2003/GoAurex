@@ -3,10 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock, MessageSquare, Headphones } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16">
         <section className="py-20 lg:py-32 relative">
@@ -23,12 +21,22 @@ const Contact = () => {
 
               {/* Contact Methods */}
               <div className="grid md:grid-cols-3 gap-6 mb-12">
-                {[
-                  { icon: Mail, title: "Email Us", detail: "contact@goaurex.com", subdetal: "We'll respond within 24 hours" },
-                  { icon: Phone, title: "Call Us", detail: "+91 63746 29874", subdetal: "Mon-Fri 9am-6pm EST" },
-                  { icon: MapPin, title: "Visit Us", detail: "123 Tech Street", subdetal: "Silicon Valley, CA 94025" }
-                ].map((item, index) => (
-                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group">
+                {[{
+                icon: Mail,
+                title: "Email Us",
+                detail: "contact@goaurex.com",
+                subdetal: "We'll respond within 24 hours"
+              }, {
+                icon: Phone,
+                title: "Call Us",
+                detail: "+1 (555) 123-4567",
+                subdetal: "Mon-Fri 9am-6pm EST"
+              }, {
+                icon: MapPin,
+                title: "Visit Us",
+                detail: "123 Tech Street",
+                subdetal: "Silicon Valley, CA 94025"
+              }].map((item, index) => <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group">
                     <CardContent className="pt-6 text-center">
                       <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all">
                         <item.icon className="h-7 w-7 text-primary-foreground" />
@@ -37,28 +45,11 @@ const Contact = () => {
                       <p className="text-foreground font-medium mb-1">{item.detail}</p>
                       <p className="text-sm text-muted-foreground">{item.subdetal}</p>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               {/* Additional Info Cards */}
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                {[
-                  { icon: Clock, title: "Business Hours", detail: "Monday - Friday: 9am - 6pm EST\nSaturday: 10am - 4pm EST\nSunday: Closed" },
-                  { icon: Headphones, title: "24/7 Support", detail: "For existing clients with support contracts, emergency support is available 24/7" },
-                  { icon: MessageSquare, title: "Live Chat", detail: "Chat with our team in real-time during business hours for quick questions" }
-                ].map((item, index) => (
-                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-border">
-                    <CardContent className="pt-6">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-primary/10 flex items-center justify-center mb-4">
-                        <item.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground whitespace-pre-line">{item.detail}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              
 
               {/* Contact Form */}
               <Card className="bg-card/50 backdrop-blur-sm border-border">
@@ -71,58 +62,30 @@ const Contact = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium mb-2">Full Name *</label>
-                        <input 
-                          type="text" 
-                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                          placeholder="John Doe"
-                          required
-                        />
+                        <input type="text" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="John Doe" required />
                       </div>
                       <div>
                         <label className="block text-sm font-medium mb-2">Email *</label>
-                        <input 
-                          type="email" 
-                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                          placeholder="john@company.com"
-                          required
-                        />
+                        <input type="email" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="john@company.com" required />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium mb-2">Company</label>
-                        <input 
-                          type="text" 
-                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                          placeholder="Your Company Name"
-                        />
+                        <input type="text" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Your Company Name" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium mb-2">Phone</label>
-                        <input 
-                          type="tel" 
-                          className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                          placeholder="+1 (555) 000-0000"
-                        />
+                        <input type="tel" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="+1 (555) 000-0000" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Subject *</label>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                        placeholder="How can we help you?"
-                        required
-                      />
+                      <input type="text" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="How can we help you?" required />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Message *</label>
-                      <textarea 
-                        rows={6}
-                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
-                        placeholder="Tell us about your project or question..."
-                        required
-                      />
+                      <textarea rows={6} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none" placeholder="Tell us about your project or question..." required />
                     </div>
                     <Button className="w-full bg-gradient-primary hover:shadow-glow transition-all py-6 text-lg">
                       Send Message
@@ -144,11 +107,7 @@ const Contact = () => {
                   <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
                     Book a free 30-minute consultation to discuss your project needs
                   </p>
-                  <Button 
-                    size="lg" 
-                    variant="secondary"
-                    className="bg-white text-primary hover:bg-white/90"
-                  >
+                  <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
                     Schedule Consultation
                   </Button>
                 </div>
@@ -158,8 +117,6 @@ const Contact = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
