@@ -57,7 +57,7 @@ const Services = () => {
                 <CardDescription className="text-base">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
@@ -65,16 +65,18 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button 
-                  variant="outline" 
-                  className="w-full"
-                  onClick={() => window.location.href = '/services'}
-                >
-                  Learn More
-                </Button>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button 
+            size="lg"
+            onClick={() => window.location.href = '/services'}
+          >
+            Learn More About Our Services
+          </Button>
         </div>
       </div>
     </section>
