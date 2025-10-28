@@ -1,8 +1,8 @@
+import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
 
 const blogPosts = [
   {
@@ -124,68 +124,92 @@ const blogPosts = [
   }
 ];
 
-const Blog = () => {
+const BlogPost = () => {
+  const { id } = useParams();
+  const post = blogPosts.find(p => p.id === id);
+
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main className="container mx-auto px-4 lg:px-8 py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+            <p className="text-muted-foreground mb-8">The blog post you are looking for does not exist.</p>
+            <Button asChild>
+              <Link to="/blog">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Blog
+              </Link>
+            </Button>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Our <span className="bg-gradient-primary bg-clip-text text-transparent">Blog</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Insights, trends, and best practices from our team of IT experts
-            </p>
+        <article className="max-w-4xl mx-auto">
+          <Button variant="ghost" asChild className="mb-8">
+            <Link to="/blog">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Blog
+            </Link>
+          </Button>
+
+          <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-4">
+            {post.category}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all duration-300 group flex flex-col">
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                    <Calendar className="h-4 w-4" />
-                    <span>{post.date}</span>
-                    <span className="ml-auto text-primary">{post.readTime}</span>
-                  </div>
-                  <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3 w-fit">
-                    {post.category}
-                  </div>
-                  <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription>{post.excerpt}</CardDescription>
-                </CardHeader>
-                <CardContent className="mt-auto">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <User className="h-4 w-4" />
-                      <span>{post.author}</span>
-                    </div>
-                    <Button variant="ghost" size="sm" className="group-hover:text-primary" onClick={() => window.location.href = `/blog/${post.id}`}>
-                      Read More
-                      <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
+
+          <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8 pb-8 border-b border-border">
+            <div className="flex items-center gap-2">
+              <User className="h-5 w-5" />
+              <span>{post.author}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="h-5 w-5" />
+              <span>{post.date}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="h-5 w-5" />
+              <span>{post.readTime}</span>
+            </div>
           </div>
 
-          <div className="mt-16 bg-card/50 backdrop-blur-sm border border-border rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter to receive the latest insights, articles, and updates directly in your inbox.
-            </p>
-            <Button size="lg" onClick={() => window.location.href = '/contact'}>
-              Subscribe Now
-            </Button>
+          <div 
+            className="prose prose-lg max-w-none
+              prose-headings:font-bold prose-headings:text-foreground
+              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4
+              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3
+              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
+              prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+              prose-strong:text-foreground prose-strong:font-semibold
+              prose-ul:my-6 prose-li:text-muted-foreground"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+
+          <div className="mt-16 pt-8 border-t border-border">
+            <div className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-8">
+              <h3 className="text-2xl font-bold mb-4">Want to Learn More?</h3>
+              <p className="text-muted-foreground mb-6">
+                Get in touch with our team to discuss how we can help transform your business with our IT solutions.
+              </p>
+              <Button size="lg" onClick={() => window.location.href = '/contact'}>
+                Contact Us
+              </Button>
+            </div>
           </div>
-        </div>
+        </article>
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Blog;
+export default BlogPost;
