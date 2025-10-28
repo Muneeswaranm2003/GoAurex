@@ -29,7 +29,7 @@ const Contact = () => {
               }, {
                 icon: Phone,
                 title: "Call Us",
-                detail: "+1 (555) 123-4567",
+                detail: "+91 63746 29874",
                 subdetal: "Mon-Fri 9am-6pm EST"
               }, {
                 icon: MapPin,
