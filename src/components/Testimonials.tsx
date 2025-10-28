@@ -3,25 +3,25 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc",
-    content: "Their cloud migration services transformed our infrastructure. We saw a 40% reduction in operational costs and significantly improved performance.",
+    name: "David Thompson",
+    role: "VP of Operations, GlobalTech",
+    content: "The team delivered beyond expectations. Their expertise in cloud infrastructure helped us scale seamlessly while reducing costs by 35%.",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David"
   },
   {
-    name: "Michael Chen",
-    role: "CTO, DataFlow Solutions",
-    content: "The data visualization dashboards they built have revolutionized how we make decisions. Real-time insights at our fingertips.",
+    name: "Lisa Anderson",
+    role: "Head of Analytics, DataCore",
+    content: "Exceptional data solutions! The custom dashboards and analytics platform transformed how we interpret business intelligence.",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael"
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa"
   },
   {
-    name: "Emily Rodriguez",
-    role: "Marketing Director, GrowthCo",
-    content: "Outstanding email marketing automation! Our engagement rates doubled and conversions increased by 65% in just three months.",
+    name: "James Wilson",
+    role: "Digital Marketing Lead, BrandFlow",
+    content: "Their email marketing campaigns drove remarkable results. We achieved 3x ROI within the first quarter and continue to see growth.",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily"
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=James"
   }
 ];
 

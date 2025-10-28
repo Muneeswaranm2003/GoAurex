@@ -3,27 +3,27 @@ import { TrendingUp, Users, Award, Zap } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    value: "500+",
-    label: "Happy Clients",
-    description: "Businesses transformed"
+    value: "1200+",
+    label: "Active Projects",
+    description: "Successfully delivered worldwide"
   },
   {
     icon: Award,
-    value: "98%",
-    label: "Success Rate",
-    description: "Project completion"
+    value: "15+",
+    label: "Years Experience",
+    description: "Industry expertise"
   },
   {
     icon: TrendingUp,
-    value: "250%",
-    label: "Average ROI",
-    description: "Client performance boost"
+    value: "95%",
+    label: "Client Retention",
+    description: "Long-term partnerships"
   },
   {
     icon: Zap,
-    value: "24/7",
-    label: "Support",
-    description: "Always here for you"
+    value: "50+",
+    label: "Expert Team",
+    description: "Certified professionals"
   }
 ];
 
