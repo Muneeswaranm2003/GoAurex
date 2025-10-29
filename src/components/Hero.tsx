@@ -46,7 +46,7 @@ const Hero = () => {
           animationDelay: "0.1s"
         }}>
             Elevate Your Business with
-            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift">Gen AI Solution</span>
+            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift animate-glow-pulse animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Gen AI Solution</span>
           </h1>
           
           {/* Feature Pills */}
