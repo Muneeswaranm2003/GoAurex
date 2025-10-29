@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +30,8 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-            <Menu className="h-6 w-6" />
+          <button className="md:hidden text-foreground transition-transform hover:scale-110" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
