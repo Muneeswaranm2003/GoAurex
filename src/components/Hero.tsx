@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Zap, Shield, Brain, Cpu, Network, Code, Database, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import { useEffect, useState } from "react";
 const Hero = () => {
@@ -31,18 +31,6 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-slow" style={{
         animationDelay: "1s"
       }} />
-      </div>
-
-      {/* Floating Icons */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <Brain className="absolute top-1/4 left-[15%] w-12 h-12 text-primary/20 animate-float" style={{ animationDelay: "0s" }} />
-        <Cpu className="absolute top-1/3 right-[20%] w-16 h-16 text-accent/20 animate-float-slow" style={{ animationDelay: "0.5s" }} />
-        <Network className="absolute bottom-1/3 left-[10%] w-14 h-14 text-primary/15 animate-float" style={{ animationDelay: "1s" }} />
-        <Code className="absolute top-[45%] right-[15%] w-10 h-10 text-accent/25 animate-float-slow" style={{ animationDelay: "1.5s" }} />
-        <Database className="absolute bottom-[25%] right-[25%] w-12 h-12 text-primary/20 animate-float" style={{ animationDelay: "2s" }} />
-        <Globe className="absolute top-[20%] right-[30%] w-14 h-14 text-accent/15 animate-float-slow" style={{ animationDelay: "2.5s" }} />
-        <Sparkles className="absolute bottom-[40%] left-[20%] w-10 h-10 text-primary/25 animate-float" style={{ animationDelay: "3s" }} />
-        <Zap className="absolute top-[60%] left-[25%] w-8 h-8 text-accent/20 animate-float-slow" style={{ animationDelay: "3.5s" }} />
       </div>
 
       {/* Content */}
