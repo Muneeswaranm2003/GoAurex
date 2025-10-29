@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax */}
-      <div className="absolute inset-0 z-0 animate-fade-in" style={{
+      <div className="absolute inset-0 z-0" style={{
       transform: `translateY(${scrollY * 0.5}px)`
     }}>
         <img src={heroImage} alt="Tech visualization background showcasing AI and cloud solutions" className="w-full h-full object-cover opacity-30" />
@@ -19,21 +19,17 @@ const Hero = () => {
       </div>
 
       {/* Animated Grid Pattern Overlay */}
-      <div className="absolute inset-0 z-0 opacity-20 animate-pulse animate-fade-in" style={{
+      <div className="absolute inset-0 z-0 opacity-20 animate-pulse" style={{
       backgroundImage: `linear-gradient(hsl(20 100% 50% / 0.1) 1px, transparent 1px),
                            linear-gradient(90deg, hsl(20 100% 50% / 0.1) 1px, transparent 1px)`,
-      backgroundSize: '50px 50px',
-      animationDelay: '0.2s'
+      backgroundSize: '50px 50px'
     }} />
 
       {/* Floating Orbs */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none animate-fade-in">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float animate-glow-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-slow animate-glow-pulse" style={{
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-slow" style={{
         animationDelay: "1s"
-      }} />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-float" style={{
-        animationDelay: "2s"
       }} />
       </div>
 
@@ -46,16 +42,16 @@ const Hero = () => {
             <span className="text-sm font-medium bg-gradient-primary bg-clip-text text-transparent">AI-Powered Solutions</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-12 leading-tight animate-fade-in-up animate-scale-in" style={{
+          <h1 className="text-5xl md:text-7xl font-bold mb-12 leading-tight animate-fade-in-up" style={{
           animationDelay: "0.1s"
         }}>
             Elevate Your Business with
-            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift animate-glow-pulse" style={{ animationDelay: "0.3s" }}>Gen AI Solution</span>
+            <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 bg-[length:200%_auto] animate-gradient-shift animate-glow-pulse animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Gen AI Solution</span>
           </h1>
           
           {/* Feature Pills */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in animate-scale-in" style={{
-          animationDelay: "0.4s"
+          <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in" style={{
+          animationDelay: "0.2s"
         }}>
             {[{
             icon: Zap,
@@ -66,25 +62,23 @@ const Hero = () => {
           }, {
             icon: Sparkles,
             text: "AI-Enhanced"
-          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary hover:scale-110 hover:shadow-glow transition-all duration-300 animate-fade-in-up cursor-pointer" style={{
+          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary hover:scale-110 transition-all duration-300 animate-fade-in-up" style={{
             animationDelay: `${0.5 + index * 0.1}s`
           }}>
-                <feature.icon className="w-4 h-4 text-primary animate-float" />
+                <feature.icon className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">{feature.text}</span>
               </div>)}
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-40 animate-scale-in animate-fade-in-up" style={{
-          animationDelay: "0.8s"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-40 animate-scale-in" style={{
+          animationDelay: "0.3s"
         }}>
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-300 px-8 py-6 group animate-glow-pulse text-lg">
+            <Button size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-50 px-8 py-6 group animate-glow-pulse text-lg">
               Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform animate-float" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-glow transition-all duration-300 text-lg px-8 py-6 animate-fade-in" style={{
-              animationDelay: "0.9s"
-            }}>
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-lg px-8 py-6">
               Schedule Consultation
             </Button>
           </div>
@@ -95,10 +89,8 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-float z-10 animate-fade-in" style={{
-        animationDelay: "1.2s"
-      }}>
-        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex items-start justify-center p-2 mx-0 px-[8px] hover:border-primary hover:shadow-glow transition-all duration-300 cursor-pointer">
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-float z-10">
+        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex items-start justify-center p-2 mx-0 px-[8px]">
           <div className="w-1.5 h-1.5 bg-primary rounded-full animate-float" />
         </div>
       </div>
