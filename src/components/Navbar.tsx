@@ -24,8 +24,8 @@ const Navbar = () => {
               Contact
             </a>
             
-            <Button className="bg-gradient-primary hover:shadow-glow transition-all">
-              Get Started
+            <Button asChild className="bg-gradient-primary hover:shadow-glow transition-all">
+              <a href="/contact">Get Started</a>
             </Button>
           </div>
 
@@ -47,8 +47,8 @@ const Navbar = () => {
               <a href="/contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
               </a>
-              <Button className="bg-gradient-primary hover:shadow-glow transition-all w-full">
-                Get Started
+              <Button asChild className="bg-gradient-primary hover:shadow-glow transition-all w-full">
+                <a href="/contact">Get Started</a>
               </Button>
             </div>
           </div>}
