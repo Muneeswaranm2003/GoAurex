@@ -35,7 +35,7 @@ const Contact = () => {
                 icon: MapPin,
                 title: "Visit Us",
                 detail: "Remote",
-                subdetal: "Silicon Valley, CA 94025"
+                subdetal: "India"
               }].map((item, index) => <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group">
                     <CardContent className="pt-6 text-center">
                       <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all">
