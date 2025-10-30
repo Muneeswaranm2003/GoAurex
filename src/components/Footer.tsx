@@ -38,7 +38,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/goaurex" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
+              <a href="https://www.linkedin.com/company/goaurex" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background border border-border hover:bg-primary hover:scale-110 transition-all duration-300 flex items-center justify-center">
                 <Linkedin className="h-5 w-5" />
               </a>
               <a href="https://twitter.com/goaurex" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background border border-border hover:bg-primary hover:scale-110 transition-all duration-300 flex items-center justify-center">
