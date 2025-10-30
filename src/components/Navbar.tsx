@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <a href="/" className="text-3xl font-logo font-black bg-gradient-primary bg-clip-text text-transparent tracking-wider hover:scale-105 transition-transform duration-300 drop-shadow-glow">
               GOAUREX
             </a>
           </div>

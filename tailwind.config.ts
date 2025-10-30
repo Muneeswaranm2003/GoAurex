@@ -65,6 +65,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        logo: ['Orbitron', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
