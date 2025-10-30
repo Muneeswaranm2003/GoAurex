@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { Linkedin, X, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -41,7 +41,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a href="https://twitter.com/goaurex" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
-                <Twitter className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </a>
               <a href="https://www.instagram.com/goaurex" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
                 <Instagram className="h-5 w-5" />
