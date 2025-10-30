@@ -31,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to company
     const companyEmailResponse = await resend.emails.send({
-      from: "Aurex Contact Form <onboarding@resend.dev>",
+      from: "GoAurex Contact Form <onboarding@resend.dev>",
       to: ["contact@goaurex.com"],
       reply_to: email,
       subject: `New Contact Form Submission: ${subject}`,
@@ -52,9 +52,9 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({
-      from: "Aurex <onboarding@resend.dev>",
+      from: "GoAurex <onboarding@resend.dev>",
       to: [email],
-      subject: "Thank you for contacting Aurex",
+      subject: "Thank you for contacting GoAurex",
       html: `
         <h1>Thank you for contacting us, ${name}!</h1>
         <p>We have received your message and will get back to you within 24 hours.</p>
@@ -62,7 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
           ${message.replace(/\n/g, '<br>')}
         </p>
-        <p>Best regards,<br>The Aurex Team</p>
+        <p>Best regards,<br>The GoAurex Team</p>
       `,
     });
 
