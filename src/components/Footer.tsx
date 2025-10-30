@@ -1,5 +1,6 @@
 import { Linkedin, Instagram, Youtube } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
+import logoImage from "@/assets/goaurex-logo.png";
 
 const Footer = () => {
   return (
@@ -7,10 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-logo font-black tracking-wider mb-4">
-              <span className="text-white">GO</span>
-              <span className="bg-gradient-primary bg-clip-text text-transparent">AUREX</span>
-            </h3>
+            <img src={logoImage} alt="GOAUREX Logo" className="h-8 mb-4" />
             <p className="text-muted-foreground text-sm">
               Transforming businesses through innovative IT solutions and cutting-edge technology.
             </p>
