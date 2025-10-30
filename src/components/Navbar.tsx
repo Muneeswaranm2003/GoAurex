@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img src={logoImage} alt="GOAUREX Logo" className="h-20" />
+              <img src={logoImage} alt="GOAUREX Logo" className="h-16" />
             </a>
           </div>
 
