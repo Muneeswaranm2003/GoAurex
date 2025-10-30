@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const blogPosts = [
   {
@@ -149,16 +150,34 @@ const Blog = () => {
 
     setIsSubmitting(true);
     
-    // Simulate subscription (you can integrate with your backend here)
-    setTimeout(() => {
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: 'Newsletter Subscriber',
+          email: email,
+          subject: 'Newsletter Subscription',
+          message: `A new user has subscribed to the newsletter with email: ${email}`
+        }
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Successfully Subscribed!",
         description: "Thank you for subscribing to our newsletter. You'll receive our latest updates in your inbox.",
       });
       setEmail("");
       setIsSubscribeOpen(false);
+    } catch (error) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Subscription Failed",
+        description: "There was an error subscribing. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
