@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <img src={logoImage} alt="GOAUREX Logo" className="h-8 mb-4" />
+            <img src={logoImage} alt="GOAUREX Logo" className="h-12 mb-4" />
             <p className="text-muted-foreground text-sm">
               Transforming businesses through innovative IT solutions and cutting-edge technology.
             </p>
