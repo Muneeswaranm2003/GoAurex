@@ -25,36 +25,40 @@ const CookieConsent = () => {
   if (!showConsent) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-card/95 backdrop-blur-sm border-t border-border shadow-elegant animate-in slide-in-from-bottom-5">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex-1">
-            <p className="text-sm text-foreground">
-              We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
-              By clicking "Accept All", you consent to our use of cookies. Read our{" "}
-              <a href="/cookie-policy" className="text-primary hover:underline">
-                Cookie Policy
-              </a>{" "}
-              for more information.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleDecline}
-              className="whitespace-nowrap"
-            >
-              Decline
-            </Button>
-            <Button
-              size="sm"
-              onClick={handleAccept}
-              className="whitespace-nowrap"
-            >
-              Accept All
-            </Button>
-          </div>
+    <div className="fixed bottom-6 right-6 z-50 max-w-md animate-in slide-in-from-bottom-5">
+      <div className="bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-elegant p-6">
+        <div className="flex items-start justify-between mb-4">
+          <h3 className="font-semibold text-foreground">Cookie Consent</h3>
+          <button
+            onClick={handleDecline}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Close"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <p className="text-sm text-muted-foreground mb-6">
+          We use cookies to enhance your experience. Read our{" "}
+          <a href="/cookie-policy" className="text-primary hover:underline">
+            Cookie Policy
+          </a>.
+        </p>
+        <div className="flex gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleDecline}
+            className="flex-1"
+          >
+            Decline
+          </Button>
+          <Button
+            size="sm"
+            onClick={handleAccept}
+            className="flex-1"
+          >
+            Accept All
+          </Button>
         </div>
       </div>
     </div>
