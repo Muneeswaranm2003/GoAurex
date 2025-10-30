@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-logo font-black tracking-wider mb-4">
               <span className="text-white">GO</span>
-              <span className="text-orange-500">AUREX</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent">AUREX</span>
             </h3>
             <p className="text-muted-foreground text-sm">
               Transforming businesses through innovative IT solutions and cutting-edge technology.

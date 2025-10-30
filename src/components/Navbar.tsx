@@ -9,7 +9,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="/" className="text-3xl font-logo font-black tracking-wider">
               <span className="text-white">GO</span>
-              <span className="text-orange-500">AUREX</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent">AUREX</span>
             </a>
           </div>
 
