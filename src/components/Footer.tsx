@@ -7,8 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-logo font-black bg-gradient-primary bg-clip-text text-transparent tracking-wider mb-4">
-              GOAUREX
+            <h3 className="text-2xl font-logo font-black tracking-wider mb-4">
+              <span className="text-white">GO</span>
+              <span className="text-orange-500">AUREX</span>
             </h3>
             <p className="text-muted-foreground text-sm">
               Transforming businesses through innovative IT solutions and cutting-edge technology.

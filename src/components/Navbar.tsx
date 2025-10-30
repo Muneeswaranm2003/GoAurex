@@ -7,8 +7,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-3xl font-logo font-black bg-gradient-primary bg-clip-text text-transparent tracking-wider">
-              GOAUREX
+            <a href="/" className="text-3xl font-logo font-black tracking-wider">
+              <span className="text-white">GO</span>
+              <span className="text-orange-500">AUREX</span>
             </a>
           </div>
 
