@@ -67,7 +67,51 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Same as root - single theme */
+    --background: 222 39% 11%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 39% 15%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 222 39% 15%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 39% 20%;
+    --secondary-foreground: 31 97% 72%;
+
+    --muted: 222 39% 18%;
+    --muted-foreground: 215 14% 70%;
+
+    --accent: 222 39% 20%;
+    --accent-foreground: 31 97% 72%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 39% 25%;
+    --input: 222 39% 25%;
+    --ring: 24 95% 53%;
+
+    /* Custom design tokens for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 43%));
+    --gradient-accent: linear-gradient(135deg, hsl(31 97% 72%), hsl(24 95% 53%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 39% 11%), hsl(222 39% 15%));
+    
+    --shadow-glow: 0 0 40px hsl(24 95% 53% / 0.4);
+    --shadow-glow-accent: 0 0 40px hsl(31 97% 72% / 0.4);
+    --shadow-elegant: 0 10px 30px -10px hsl(24 95% 53% / 0.3);
+
+    --sidebar-background: 222 39% 15%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 39% 20%;
+    --sidebar-accent-foreground: 31 97% 72%;
+    --sidebar-border: 222 39% 25%;
+    --sidebar-ring: 24 95% 53%;
   }
 }
 
