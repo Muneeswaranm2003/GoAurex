@@ -8,14 +8,14 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
 
     --primary: 20 100% 50%;
     --primary-foreground: 0 0% 98%;
@@ -23,8 +23,8 @@ All colors MUST be HSL.
     --secondary: 15 90% 45%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 25 100% 60%;
     --accent-foreground: 0 0% 5%;
@@ -32,8 +32,8 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
     --ring: 20 100% 50%;
 
     --radius: 0.75rem;
@@ -41,7 +41,7 @@ All colors MUST be HSL.
     /* Custom design tokens */
     --gradient-primary: linear-gradient(135deg, hsl(20 100% 50%), hsl(15 90% 45%));
     --gradient-accent: linear-gradient(135deg, hsl(25 100% 60%), hsl(20 100% 50%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 95%));
     
     --shadow-glow: 0 0 40px hsl(20 100% 50% / 0.3);
     --shadow-glow-accent: 0 0 40px hsl(25 100% 60% / 0.3);
