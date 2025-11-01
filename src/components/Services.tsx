@@ -43,7 +43,7 @@ const Services = () => {
         }}>
               <CardHeader>
                 <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
-                  <img src={service.icon} alt={`${service.title} icon`} className="w-full h-full object-contain" />
+                  <img src={service.icon} alt={`${service.title} icon`} className="w-full h-full object-contain rounded-lg" />
                 </div>
                 <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
                 <CardDescription className="text-base">{service.description}</CardDescription>
