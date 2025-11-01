@@ -23,7 +23,7 @@ const services = [{
   features: ["Dashboard Design", "BI Tools Integration", "Custom Reports", "Real-time Analytics"]
 }];
 const Services = () => {
-  return <section id="services" className="py-20 lg:py-32 relative">
+  return <section id="services" className="py-20 lg:py-32 relative bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -35,7 +35,7 @@ const Services = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-elegant group animate-fade-in-up" style={{
+          {services.map((service, index) => <Card key={index} className="bg-white backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 group animate-fade-in-up" style={{
           animationDelay: `${index * 100}ms`
         }}>
               <CardHeader>

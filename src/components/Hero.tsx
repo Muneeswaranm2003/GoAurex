@@ -9,30 +9,30 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background Image with Parallax */}
       <div className="absolute inset-0 z-0" style={{
       transform: `translateY(${scrollY * 0.5}px)`
     }}>
-        <img src={heroImage} alt="Tech visualization background showcasing AI and cloud solutions" className="w-full h-full object-cover opacity-20" />
+        <img src={heroImage} alt="Tech visualization background showcasing AI and cloud solutions" className="w-full h-full object-cover opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
       {/* Animated Grid Pattern Overlay */}
-      <div className="absolute inset-0 z-0 opacity-[0.15]" style={{
-      backgroundImage: `linear-gradient(hsl(20 100% 50% / 0.15) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(20 100% 50% / 0.15) 1px, transparent 1px)`,
+      <div className="absolute inset-0 z-0 opacity-[0.06]" style={{
+      backgroundImage: `linear-gradient(hsl(0 0% 20%) 1px, transparent 1px),
+                           linear-gradient(90deg, hsl(0 0% 20%) 1px, transparent 1px)`,
       backgroundSize: '60px 60px',
       animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
     }} />
 
       {/* Floating Orbs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-float" />
-        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] animate-float-slow" style={{
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-float" />
+        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[120px] animate-float-slow" style={{
         animationDelay: "1s"
       }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] animate-pulse" style={{
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] animate-pulse" style={{
         animationDuration: "8s"
       }} />
       </div>
@@ -41,7 +41,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 sm:pt-20">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge with shimmer effect */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/30 animate-fade-in shadow-lg shadow-primary/5">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-white backdrop-blur-sm border border-primary/20 animate-fade-in shadow-lg shadow-primary/10">
             <Sparkles className="w-4 h-4 text-primary animate-float" />
             <span className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">AI-Powered Solutions</span>
           </div>
@@ -72,11 +72,11 @@ const Hero = () => {
           }, {
             icon: Sparkles,
             text: "AI-Enhanced"
-          }].map((feature, index) => <div key={index} className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-card hover:shadow-lg hover:shadow-primary/5 hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in-up" style={{
+          }].map((feature, index) => <div key={index} className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-white backdrop-blur-sm border border-border hover:border-primary hover:bg-white hover:shadow-md hover:shadow-primary/10 hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in-up" style={{
             animationDelay: `${0.4 + index * 0.1}s`
           }}>
                 <feature.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">{feature.text}</span>
+                <span className="text-sm font-medium text-foreground">{feature.text}</span>
               </div>)}
           </div>
 
@@ -90,7 +90,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 text-base sm:text-lg font-semibold px-8 py-6 backdrop-blur-sm bg-background/50">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 text-base sm:text-lg font-semibold px-8 py-6 backdrop-blur-sm bg-white">
               <a href="/contact">Schedule Consultation</a>
             </Button>
           </div>

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 const Contact = () => {
-  return <section id="contact" className="pt-12 lg:pt-20 pb-8 lg:pb-12 relative">
+  return <section id="contact" className="pt-12 lg:pt-20 pb-8 lg:pb-12 relative bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -27,7 +27,7 @@ const Contact = () => {
             icon: MapPin,
             title: "Visit Us",
             detail: "Remote, India"
-          }].map((item, index) => <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary transition-all duration-300">
+          }].map((item, index) => <Card key={index} className="bg-white backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-md hover:shadow-primary/10">
                 <CardContent className="pt-6 text-center">
                   <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
                     <item.icon className="h-6 w-6 text-primary-foreground" />

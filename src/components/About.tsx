@@ -11,7 +11,7 @@ const benefits = [
 
 const About = () => {
   return (
-    <section id="about" className="py-20 lg:py-32 bg-card/30 relative">
+    <section id="about" className="py-20 lg:py-32 bg-background relative">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -27,7 +27,7 @@ const About = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="flex items-start space-x-3 p-4 rounded-lg bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-colors"
+                className="flex items-start space-x-3 p-4 rounded-lg bg-white backdrop-blur-sm hover:bg-white/80 border border-border hover:border-primary/30 transition-all hover:shadow-sm"
               >
                 <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
                 <p className="text-foreground">{benefit}</p>
