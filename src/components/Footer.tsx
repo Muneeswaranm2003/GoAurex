@@ -4,7 +4,7 @@ import logoImage from "@/assets/goaurex-logo.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border py-12 shadow-lg">
+    <footer className="bg-white border-t border-border py-12 shadow-lg">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
