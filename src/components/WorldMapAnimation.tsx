@@ -6,6 +6,12 @@ interface City {
   name: string;
 }
 
+interface MapDot {
+  x: number;
+  y: number;
+  brightness: number;
+}
+
 const WorldMapAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -24,20 +30,59 @@ const WorldMapAnimation = () => {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
+    // Generate world map dots (continent shapes)
+    const generateMapDots = (): MapDot[] => {
+      const dots: MapDot[] = [];
+      const density = 8;
+      
+      // Continent regions (approximate normalized coordinates)
+      const continents = [
+        // North America
+        { xStart: 0.08, xEnd: 0.25, yStart: 0.2, yEnd: 0.45 },
+        // South America
+        { xStart: 0.18, xEnd: 0.28, yStart: 0.48, yEnd: 0.75 },
+        // Europe
+        { xStart: 0.42, xEnd: 0.52, yStart: 0.18, yEnd: 0.35 },
+        // Africa
+        { xStart: 0.42, xEnd: 0.55, yStart: 0.38, yEnd: 0.72 },
+        // Asia
+        { xStart: 0.52, xEnd: 0.78, yStart: 0.15, yEnd: 0.55 },
+        // Australia
+        { xStart: 0.72, xEnd: 0.82, yStart: 0.58, yEnd: 0.72 },
+      ];
+
+      continents.forEach(continent => {
+        const dotsInContinent = Math.floor(Math.random() * 100 + 150);
+        for (let i = 0; i < dotsInContinent; i++) {
+          const x = continent.xStart + Math.random() * (continent.xEnd - continent.xStart);
+          const y = continent.yStart + Math.random() * (continent.yEnd - continent.yStart);
+          dots.push({
+            x,
+            y,
+            brightness: Math.random() * 0.5 + 0.5
+          });
+        }
+      });
+
+      return dots;
+    };
+
+    const mapDots = generateMapDots();
+
     // Major cities coordinates (approximate positions on canvas)
     const cities: City[] = [
       { x: 0.15, y: 0.35, name: "New York" },
       { x: 0.25, y: 0.25, name: "London" },
-      { x: 0.35, y: 0.3, name: "Paris" },
-      { x: 0.45, y: 0.4, name: "Dubai" },
-      { x: 0.55, y: 0.35, name: "Mumbai" },
-      { x: 0.65, y: 0.3, name: "Singapore" },
-      { x: 0.75, y: 0.25, name: "Tokyo" },
-      { x: 0.8, y: 0.5, name: "Sydney" },
-      { x: 0.2, y: 0.5, name: "São Paulo" },
-      { x: 0.5, y: 0.55, name: "Johannesburg" },
-      { x: 0.7, y: 0.4, name: "Hong Kong" },
-      { x: 0.1, y: 0.3, name: "Los Angeles" },
+      { x: 0.46, y: 0.28, name: "Paris" },
+      { x: 0.52, y: 0.38, name: "Dubai" },
+      { x: 0.62, y: 0.38, name: "Mumbai" },
+      { x: 0.70, y: 0.42, name: "Singapore" },
+      { x: 0.76, y: 0.32, name: "Tokyo" },
+      { x: 0.78, y: 0.65, name: "Sydney" },
+      { x: 0.23, y: 0.58, name: "São Paulo" },
+      { x: 0.48, y: 0.62, name: "Johannesburg" },
+      { x: 0.73, y: 0.38, name: "Hong Kong" },
+      { x: 0.12, y: 0.32, name: "Los Angeles" },
     ];
 
     // Create connections between cities
@@ -59,18 +104,24 @@ const WorldMapAnimation = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw world map dots (grid pattern)
-      ctx.fillStyle = "rgba(249, 115, 22, 0.4)";
-      const dotSpacing = 30;
-      for (let x = 0; x < canvas.width; x += dotSpacing) {
-        for (let y = 0; y < canvas.height; y += dotSpacing) {
-          if (Math.random() > 0.5) {
-            ctx.beginPath();
-            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-            ctx.fill();
-          }
-        }
-      }
+      // Draw world map dots (continent shapes)
+      mapDots.forEach(dot => {
+        const x = dot.x * canvas.width;
+        const y = dot.y * canvas.height;
+        const alpha = dot.brightness * (0.6 + Math.sin(pulsePhase + dot.x * 10) * 0.2);
+        
+        // Glow effect
+        ctx.fillStyle = `rgba(249, 115, 22, ${alpha * 0.3})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Core dot
+        ctx.fillStyle = `rgba(249, 115, 22, ${alpha})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      });
 
       // Draw connections with animation
       connections.forEach(([startIdx, endIdx], connIdx) => {
