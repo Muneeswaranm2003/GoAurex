@@ -5,22 +5,26 @@ const services = [{
   icon: Database,
   title: "Data Solutions",
   description: "Comprehensive data management, analytics, and integration services to unlock the full potential of your business data.",
-  features: ["Data Warehousing", "ETL Processes", "Data Migration", "Database Optimization"]
+  features: ["Data Warehousing", "ETL Processes", "Data Migration", "Database Optimization"],
+  iconColor: "text-blue-500"
 }, {
   icon: Cloud,
   title: "Cloud Solutions",
   description: "Scalable cloud infrastructure and migration services designed to enhance performance, security, and flexibility.",
-  features: ["Cloud Migration", "AWS/Azure/GCP", "DevOps Integration", "Cloud Security"]
+  features: ["Cloud Migration", "AWS/Azure/GCP", "DevOps Integration", "Cloud Security"],
+  iconColor: "text-purple-500"
 }, {
   icon: Mail,
   title: "Email Marketing",
   description: "Strategic email marketing campaigns that drive engagement, conversions, and customer loyalty at scale.",
-  features: ["Campaign Design", "Automation", "Analytics & Reporting", "List Management"]
+  features: ["Campaign Design", "Automation", "Analytics & Reporting", "List Management"],
+  iconColor: "text-green-500"
 }, {
   icon: BarChart3,
   title: "Data Visualization",
   description: "Transform complex data into intuitive, interactive visualizations that drive informed business decisions.",
-  features: ["Dashboard Design", "BI Tools Integration", "Custom Reports", "Real-time Analytics"]
+  features: ["Dashboard Design", "BI Tools Integration", "Custom Reports", "Real-time Analytics"],
+  iconColor: "text-orange-500"
 }];
 const Services = () => {
   return <section id="services" className="py-20 lg:py-32 relative bg-muted/30">
@@ -39,8 +43,8 @@ const Services = () => {
           animationDelay: `${index * 100}ms`
         }}>
               <CardHeader>
-                <div className="w-14 h-14 rounded-lg bg-gradient-primary flex items-center justify-center mb-4 group-hover:shadow-glow transition-all">
-                  <service.icon className="h-7 w-7 text-primary-foreground" />
+                <div className="w-14 h-14 rounded-lg bg-muted/50 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+                  <service.icon className={`h-7 w-7 ${service.iconColor}`} />
                 </div>
                 <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
                 <CardDescription className="text-base">{service.description}</CardDescription>
