@@ -40,9 +40,9 @@ const WorldMapAnimation = () => {
       if (isGlowing) {
         // Large outer glow
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, size * 1.5);
-        gradient.addColorStop(0, `rgba(34, 211, 238, ${alpha * 0.4})`);
-        gradient.addColorStop(0.5, `rgba(34, 211, 238, ${alpha * 0.2})`);
-        gradient.addColorStop(1, `rgba(34, 211, 238, 0)`);
+        gradient.addColorStop(0, `rgba(249, 115, 22, ${alpha * 0.4})`);
+        gradient.addColorStop(0.5, `rgba(249, 115, 22, ${alpha * 0.2})`);
+        gradient.addColorStop(1, `rgba(249, 115, 22, 0)`);
         ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(x, y, size * 1.5, 0, Math.PI * 2);
@@ -51,8 +51,8 @@ const WorldMapAnimation = () => {
       
       // Head with glow
       ctx.shadowBlur = 10;
-      ctx.shadowColor = `rgba(34, 211, 238, ${alpha})`;
-      ctx.fillStyle = `rgba(34, 211, 238, ${alpha})`;
+      ctx.shadowColor = `rgba(249, 115, 22, ${alpha})`;
+      ctx.fillStyle = `rgba(249, 115, 22, ${alpha})`;
       ctx.beginPath();
       ctx.arc(x, y - bodyHeight * 0.3, headRadius, 0, Math.PI * 2);
       ctx.fill();
@@ -73,7 +73,7 @@ const WorldMapAnimation = () => {
       ctx.shadowBlur = 0;
       
       // Core highlight
-      ctx.fillStyle = `rgba(165, 243, 252, ${alpha * 0.8})`;
+      ctx.fillStyle = `rgba(253, 186, 116, ${alpha * 0.8})`;
       ctx.beginPath();
       ctx.arc(x, y - bodyHeight * 0.3, headRadius * 0.4, 0, Math.PI * 2);
       ctx.fill();
@@ -245,20 +245,20 @@ const WorldMapAnimation = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw world map dots with teal/green glow
+      // Draw world map dots with orange/warm glow
       mapDots.forEach(dot => {
         const x = dot.x * canvas.width;
         const y = dot.y * canvas.height;
         const alpha = dot.brightness * (0.5 + Math.sin(pulsePhase + dot.x * 10) * 0.3);
         
-        // Outer glow (teal)
-        ctx.fillStyle = `rgba(34, 211, 238, ${alpha * 0.2})`;
+        // Outer glow (orange)
+        ctx.fillStyle = `rgba(249, 115, 22, ${alpha * 0.2})`;
         ctx.beginPath();
         ctx.arc(x, y, 3.5, 0, Math.PI * 2);
         ctx.fill();
         
-        // Core dot (brighter teal)
-        ctx.fillStyle = `rgba(34, 211, 238, ${alpha})`;
+        // Core dot (brighter orange)
+        ctx.fillStyle = `rgba(249, 115, 22, ${alpha})`;
         ctx.beginPath();
         ctx.arc(x, y, 1.8, 0, Math.PI * 2);
         ctx.fill();
@@ -296,14 +296,14 @@ const WorldMapAnimation = () => {
 
           // Draw curved line with gradient
           const gradient = ctx.createLinearGradient(startX, startY, endX, endY);
-          gradient.addColorStop(0, `rgba(34, 211, 238, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.2})`);
-          gradient.addColorStop(0.5, `rgba(34, 211, 238, ${0.8})`);
-          gradient.addColorStop(1, `rgba(34, 211, 238, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.2})`);
+          gradient.addColorStop(0, `rgba(249, 115, 22, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.2})`);
+          gradient.addColorStop(0.5, `rgba(249, 115, 22, ${0.8})`);
+          gradient.addColorStop(1, `rgba(249, 115, 22, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.2})`);
           
           ctx.strokeStyle = gradient;
           ctx.lineWidth = 2;
           ctx.shadowBlur = 8;
-          ctx.shadowColor = 'rgba(34, 211, 238, 0.6)';
+          ctx.shadowColor = 'rgba(249, 115, 22, 0.6)';
           ctx.beginPath();
           ctx.moveTo(startX, startY);
           
@@ -337,13 +337,13 @@ const WorldMapAnimation = () => {
         const pulse = Math.sin(pulsePhase + idx * 0.5) * 0.3 + 0.7;
 
         // Large outer glow ring
-        ctx.fillStyle = `rgba(34, 211, 238, ${0.15 * pulse})`;
+        ctx.fillStyle = `rgba(249, 115, 22, ${0.15 * pulse})`;
         ctx.beginPath();
         ctx.arc(x, y, 18 * pulse, 0, Math.PI * 2);
         ctx.fill();
 
         // Medium glow ring
-        ctx.fillStyle = `rgba(34, 211, 238, ${0.25 * pulse})`;
+        ctx.fillStyle = `rgba(249, 115, 22, ${0.25 * pulse})`;
         ctx.beginPath();
         ctx.arc(x, y, 12 * pulse, 0, Math.PI * 2);
         ctx.fill();
