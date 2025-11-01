@@ -30,36 +30,64 @@ const WorldMapAnimation = () => {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Generate world map dots (continent shapes)
+    // Generate world map dots (continent shapes) - more detailed continents
     const generateMapDots = (): MapDot[] => {
       const dots: MapDot[] = [];
-      const density = 8;
       
-      // Continent regions (approximate normalized coordinates)
+      // Continent regions with more accurate shapes (approximate normalized coordinates)
       const continents = [
         // North America
-        { xStart: 0.08, xEnd: 0.25, yStart: 0.2, yEnd: 0.45 },
+        { xStart: 0.08, xEnd: 0.25, yStart: 0.15, yEnd: 0.45, density: 200 },
         // South America
-        { xStart: 0.18, xEnd: 0.28, yStart: 0.48, yEnd: 0.75 },
+        { xStart: 0.18, xEnd: 0.28, yStart: 0.48, yEnd: 0.75, density: 150 },
         // Europe
-        { xStart: 0.42, xEnd: 0.52, yStart: 0.18, yEnd: 0.35 },
+        { xStart: 0.43, xEnd: 0.52, yStart: 0.18, yEnd: 0.35, density: 120 },
         // Africa
-        { xStart: 0.42, xEnd: 0.55, yStart: 0.38, yEnd: 0.72 },
+        { xStart: 0.43, xEnd: 0.56, yStart: 0.35, yEnd: 0.72, density: 180 },
         // Asia
-        { xStart: 0.52, xEnd: 0.78, yStart: 0.15, yEnd: 0.55 },
+        { xStart: 0.52, xEnd: 0.80, yStart: 0.12, yEnd: 0.55, density: 300 },
         // Australia
-        { xStart: 0.72, xEnd: 0.82, yStart: 0.58, yEnd: 0.72 },
+        { xStart: 0.73, xEnd: 0.83, yStart: 0.58, yEnd: 0.72, density: 100 },
+        // Middle East
+        { xStart: 0.50, xEnd: 0.58, yStart: 0.30, yEnd: 0.40, density: 80 },
       ];
 
       continents.forEach(continent => {
-        const dotsInContinent = Math.floor(Math.random() * 100 + 150);
-        for (let i = 0; i < dotsInContinent; i++) {
-          const x = continent.xStart + Math.random() * (continent.xEnd - continent.xStart);
-          const y = continent.yStart + Math.random() * (continent.yEnd - continent.yStart);
+        for (let i = 0; i < continent.density; i++) {
+          // Create more defined edges with clustering
+          const edgeFactor = Math.random();
+          let x, y;
+          
+          if (edgeFactor > 0.3) {
+            // Interior points
+            x = continent.xStart + Math.random() * (continent.xEnd - continent.xStart);
+            y = continent.yStart + Math.random() * (continent.yEnd - continent.yStart);
+          } else {
+            // Edge points for definition
+            const side = Math.floor(Math.random() * 4);
+            switch(side) {
+              case 0: // top
+                x = continent.xStart + Math.random() * (continent.xEnd - continent.xStart);
+                y = continent.yStart;
+                break;
+              case 1: // right
+                x = continent.xEnd;
+                y = continent.yStart + Math.random() * (continent.yEnd - continent.yStart);
+                break;
+              case 2: // bottom
+                x = continent.xStart + Math.random() * (continent.xEnd - continent.xStart);
+                y = continent.yEnd;
+                break;
+              default: // left
+                x = continent.xStart;
+                y = continent.yStart + Math.random() * (continent.yEnd - continent.yStart);
+            }
+          }
+          
           dots.push({
             x,
             y,
-            brightness: Math.random() * 0.5 + 0.5
+            brightness: Math.random() * 0.4 + 0.6
           });
         }
       });
@@ -101,26 +129,57 @@ const WorldMapAnimation = () => {
     const pulseSpeed = 0.05;
     let pulsePhase = 0;
 
+    // Helper function to draw person icon
+    const drawPerson = (x: number, y: number, size: number, alpha: number) => {
+      ctx.save();
+      
+      // Glow effect
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = `rgba(249, 115, 22, ${alpha * 0.5})`;
+      
+      // Head
+      ctx.fillStyle = `rgba(249, 115, 22, ${alpha})`;
+      ctx.beginPath();
+      ctx.arc(x, y - size * 0.4, size * 0.3, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Body
+      ctx.beginPath();
+      ctx.moveTo(x, y - size * 0.1);
+      ctx.lineTo(x, y + size * 0.5);
+      ctx.strokeStyle = `rgba(249, 115, 22, ${alpha})`;
+      ctx.lineWidth = size * 0.2;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+      
+      // Arms
+      ctx.beginPath();
+      ctx.moveTo(x - size * 0.4, y);
+      ctx.lineTo(x + size * 0.4, y);
+      ctx.stroke();
+      
+      // Legs
+      ctx.beginPath();
+      ctx.moveTo(x, y + size * 0.5);
+      ctx.lineTo(x - size * 0.25, y + size * 0.9);
+      ctx.moveTo(x, y + size * 0.5);
+      ctx.lineTo(x + size * 0.25, y + size * 0.9);
+      ctx.stroke();
+      
+      ctx.restore();
+    };
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw world map dots (continent shapes)
+      // Draw world map with people icons
       mapDots.forEach(dot => {
         const x = dot.x * canvas.width;
         const y = dot.y * canvas.height;
-        const alpha = dot.brightness * (0.6 + Math.sin(pulsePhase + dot.x * 10) * 0.2);
+        const alpha = dot.brightness * (0.5 + Math.sin(pulsePhase + dot.x * 10) * 0.3);
+        const size = 4 + Math.sin(pulsePhase + dot.y * 10) * 1;
         
-        // Glow effect
-        ctx.fillStyle = `rgba(249, 115, 22, ${alpha * 0.3})`;
-        ctx.beginPath();
-        ctx.arc(x, y, 3, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Core dot
-        ctx.fillStyle = `rgba(249, 115, 22, ${alpha})`;
-        ctx.beginPath();
-        ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-        ctx.fill();
+        drawPerson(x, y, size, alpha);
       });
 
       // Draw connections with animation
@@ -142,56 +201,62 @@ const WorldMapAnimation = () => {
           const currentEndX = startX + (endX - startX) * localProgress;
           const currentEndY = startY + (endY - startY) * localProgress;
 
-          ctx.strokeStyle = `rgba(249, 115, 22, ${0.5 + Math.sin(pulsePhase + connIdx) * 0.3})`;
-          ctx.lineWidth = 2;
+          // Gradient line
+          const gradient = ctx.createLinearGradient(startX, startY, currentEndX, currentEndY);
+          gradient.addColorStop(0, `rgba(249, 115, 22, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.3})`);
+          gradient.addColorStop(0.5, `rgba(253, 186, 116, ${0.8})`);
+          gradient.addColorStop(1, `rgba(249, 115, 22, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.3})`);
+          
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = 2.5;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = 'rgba(249, 115, 22, 0.5)';
           ctx.beginPath();
           ctx.moveTo(startX, startY);
           ctx.lineTo(currentEndX, currentEndY);
           ctx.stroke();
 
-          // Draw animated dot along the line
+          // Draw animated person icon along the line
           if (localProgress === 1) {
             const dotProgress = (animationProgress * 3 + connIdx * 0.3) % 1;
             const dotX = startX + (endX - startX) * dotProgress;
             const dotY = startY + (endY - startY) * dotProgress;
 
-            ctx.fillStyle = "rgba(249, 115, 22, 0.8)";
-            ctx.beginPath();
-            ctx.arc(dotX, dotY, 3, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Glow effect
-            ctx.fillStyle = "rgba(249, 115, 22, 0.3)";
-            ctx.beginPath();
-            ctx.arc(dotX, dotY, 8, 0, Math.PI * 2);
-            ctx.fill();
+            // Moving person with glow
+            ctx.save();
+            ctx.shadowBlur = 15;
+            ctx.shadowColor = 'rgba(249, 115, 22, 0.8)';
+            drawPerson(dotX, dotY, 6, 0.9);
+            ctx.restore();
           }
         }
       });
 
-      // Draw city nodes
+      // Draw major city nodes with enhanced person icons
       cities.forEach((city, idx) => {
         const x = city.x * canvas.width;
         const y = city.y * canvas.height;
-        const pulse = Math.sin(pulsePhase + idx * 0.5) * 0.3 + 0.7;
+        const pulse = Math.sin(pulsePhase + idx * 0.5) * 0.2 + 0.8;
 
-        // Outer glow
-        ctx.fillStyle = `rgba(249, 115, 22, ${0.2 * pulse})`;
+        // Outer glow ring
+        ctx.save();
+        ctx.strokeStyle = `rgba(249, 115, 22, ${0.3 * pulse})`;
+        ctx.lineWidth = 3;
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = 'rgba(249, 115, 22, 0.6)';
         ctx.beginPath();
-        ctx.arc(x, y, 12 * pulse, 0, Math.PI * 2);
+        ctx.arc(x, y, 15 * pulse, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+
+        // Inner glow
+        ctx.fillStyle = `rgba(249, 115, 22, ${0.15 * pulse})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 10 * pulse, 0, Math.PI * 2);
         ctx.fill();
 
-        // Inner dot
-        ctx.fillStyle = `rgba(249, 115, 22, ${0.9 * pulse})`;
-        ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Core
-        ctx.fillStyle = "rgba(253, 186, 116, 1)";
-        ctx.beginPath();
-        ctx.arc(x, y, 2, 0, Math.PI * 2);
-        ctx.fill();
+        // Draw larger person icon for cities
+        drawPerson(x, y, 8 * pulse, 1);
       });
 
       // Update animation
