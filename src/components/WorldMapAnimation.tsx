@@ -60,13 +60,13 @@ const WorldMapAnimation = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Draw world map dots (grid pattern)
-      ctx.fillStyle = "rgba(249, 115, 22, 0.15)";
-      const dotSpacing = 40;
+      ctx.fillStyle = "rgba(249, 115, 22, 0.4)";
+      const dotSpacing = 30;
       for (let x = 0; x < canvas.width; x += dotSpacing) {
         for (let y = 0; y < canvas.height; y += dotSpacing) {
-          if (Math.random() > 0.7) {
+          if (Math.random() > 0.5) {
             ctx.beginPath();
-            ctx.arc(x, y, 1, 0, Math.PI * 2);
+            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
             ctx.fill();
           }
         }
@@ -91,8 +91,8 @@ const WorldMapAnimation = () => {
           const currentEndX = startX + (endX - startX) * localProgress;
           const currentEndY = startY + (endY - startY) * localProgress;
 
-          ctx.strokeStyle = `rgba(249, 115, 22, ${0.3 + Math.sin(pulsePhase + connIdx) * 0.2})`;
-          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = `rgba(249, 115, 22, ${0.5 + Math.sin(pulsePhase + connIdx) * 0.3})`;
+          ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.moveTo(startX, startY);
           ctx.lineTo(currentEndX, currentEndY);
@@ -164,7 +164,7 @@ const WorldMapAnimation = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.9 }}
     />
   );
 };
