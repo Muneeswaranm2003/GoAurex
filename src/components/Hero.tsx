@@ -18,13 +18,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
-      {/* Animated Grid Pattern Overlay */}
-      <div className="absolute inset-0 z-0 opacity-[0.06]" style={{
-      backgroundImage: `linear-gradient(hsl(0 0% 20%) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(0 0% 20%) 1px, transparent 1px)`,
-      backgroundSize: '60px 60px',
-      animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
-    }} />
 
       {/* Floating Orbs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
