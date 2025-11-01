@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap, Shield } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
 import { useEffect, useState } from "react";
+import WorldMapAnimation from "./WorldMapAnimation";
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -10,20 +10,11 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax */}
-      <div className="absolute inset-0 z-0" style={{
-      transform: `translateY(${scrollY * 0.5}px)`
-    }}>
-        <img src={heroImage} alt="Tech visualization background showcasing AI and cloud solutions" className="w-full h-full object-cover opacity-30" />
+      {/* Animated World Map Background */}
+      <div className="absolute inset-0 z-0">
+        <WorldMapAnimation />
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
-
-      {/* Animated Grid Pattern Overlay */}
-      <div className="absolute inset-0 z-0 opacity-20 animate-pulse" style={{
-      backgroundImage: `linear-gradient(hsl(20 100% 50% / 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(20 100% 50% / 0.1) 1px, transparent 1px)`,
-      backgroundSize: '50px 50px'
-    }} />
 
       {/* Floating Orbs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
