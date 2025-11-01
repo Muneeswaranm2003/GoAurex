@@ -35,7 +35,7 @@ const Services = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => <Card key={index} className="bg-white backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 group animate-fade-in-up" style={{
+          {services.map((service, index) => <Card key={index} className="bg-card backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 group animate-fade-in-up" style={{
           animationDelay: `${index * 100}ms`
         }}>
               <CardHeader>

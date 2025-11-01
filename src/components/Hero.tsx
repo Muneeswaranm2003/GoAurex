@@ -41,7 +41,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 sm:pt-20">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge with shimmer effect */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-white backdrop-blur-sm border border-primary/20 animate-fade-in shadow-lg shadow-primary/10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/30 animate-fade-in shadow-lg shadow-primary/10">
             <Sparkles className="w-4 h-4 text-primary animate-float" />
             <span className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">AI-Powered Solutions</span>
           </div>
@@ -72,7 +72,7 @@ const Hero = () => {
           }, {
             icon: Sparkles,
             text: "AI-Enhanced"
-          }].map((feature, index) => <div key={index} className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-white backdrop-blur-sm border border-border hover:border-primary hover:bg-white hover:shadow-md hover:shadow-primary/10 hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in-up" style={{
+          }].map((feature, index) => <div key={index} className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-card backdrop-blur-sm border border-border hover:border-primary hover:bg-primary/5 hover:shadow-md hover:shadow-primary/10 hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in-up" style={{
             animationDelay: `${0.4 + index * 0.1}s`
           }}>
                 <feature.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
@@ -90,7 +90,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 text-base sm:text-lg font-semibold px-8 py-6 backdrop-blur-sm bg-white">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-2 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 text-base sm:text-lg font-semibold px-8 py-6 backdrop-blur-sm bg-card">
               <a href="/contact">Schedule Consultation</a>
             </Button>
           </div>

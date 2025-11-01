@@ -27,7 +27,7 @@ const About = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="flex items-start space-x-3 p-4 rounded-lg bg-white backdrop-blur-sm hover:bg-white/80 border border-border hover:border-primary/30 transition-all hover:shadow-sm"
+                className="flex items-start space-x-3 p-4 rounded-lg bg-card backdrop-blur-sm hover:bg-card/80 border border-border hover:border-primary/30 transition-all hover:shadow-sm"
               >
                 <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
                 <p className="text-foreground">{benefit}</p>

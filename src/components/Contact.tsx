@@ -27,7 +27,7 @@ const Contact = () => {
             icon: MapPin,
             title: "Visit Us",
             detail: "Remote, India"
-          }].map((item, index) => <Card key={index} className="bg-white backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-md hover:shadow-primary/10">
+          }].map((item, index) => <Card key={index} className="bg-card backdrop-blur-sm border-border hover:border-primary transition-all duration-300 hover:shadow-md hover:shadow-primary/10">
                 <CardContent className="pt-6 text-center">
                   <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
                     <item.icon className="h-6 w-6 text-primary-foreground" />
