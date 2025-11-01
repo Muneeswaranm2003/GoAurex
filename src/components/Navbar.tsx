@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logoImage from "@/assets/goaurex-logo.png";
+import logoImage from "@/assets/goaurex-logo.jpg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-b border-border shadow-sm">
@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img src={logoImage} alt="GOAUREX Logo" className="h-20 w-auto scale-110" />
+              <img src={logoImage} alt="GOAUREX Logo" className="h-14 w-auto" />
             </a>
           </div>
 
