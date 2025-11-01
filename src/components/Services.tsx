@@ -1,30 +1,29 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Database, Cloud, Mail, BarChart3 } from "lucide-react";
+import iconDataSolutions from "@/assets/icon-data-solutions.png";
+import iconCloudSolutions from "@/assets/icon-cloud-solutions.png";
+import iconEmailMarketing from "@/assets/icon-email-marketing.png";
+import iconDataVisualization from "@/assets/icon-data-visualization.png";
 const services = [{
-  icon: Database,
+  icon: iconDataSolutions,
   title: "Data Solutions",
   description: "Comprehensive data management, analytics, and integration services to unlock the full potential of your business data.",
-  features: ["Data Warehousing", "ETL Processes", "Data Migration", "Database Optimization"],
-  iconColor: "text-blue-500"
+  features: ["Data Warehousing", "ETL Processes", "Data Migration", "Database Optimization"]
 }, {
-  icon: Cloud,
+  icon: iconCloudSolutions,
   title: "Cloud Solutions",
   description: "Scalable cloud infrastructure and migration services designed to enhance performance, security, and flexibility.",
-  features: ["Cloud Migration", "AWS/Azure/GCP", "DevOps Integration", "Cloud Security"],
-  iconColor: "text-purple-500"
+  features: ["Cloud Migration", "AWS/Azure/GCP", "DevOps Integration", "Cloud Security"]
 }, {
-  icon: Mail,
+  icon: iconEmailMarketing,
   title: "Email Marketing",
   description: "Strategic email marketing campaigns that drive engagement, conversions, and customer loyalty at scale.",
-  features: ["Campaign Design", "Automation", "Analytics & Reporting", "List Management"],
-  iconColor: "text-green-500"
+  features: ["Campaign Design", "Automation", "Analytics & Reporting", "List Management"]
 }, {
-  icon: BarChart3,
+  icon: iconDataVisualization,
   title: "Data Visualization",
   description: "Transform complex data into intuitive, interactive visualizations that drive informed business decisions.",
-  features: ["Dashboard Design", "BI Tools Integration", "Custom Reports", "Real-time Analytics"],
-  iconColor: "text-orange-500"
+  features: ["Dashboard Design", "BI Tools Integration", "Custom Reports", "Real-time Analytics"]
 }];
 const Services = () => {
   return <section id="services" className="py-20 lg:py-32 relative bg-muted/30">
@@ -43,8 +42,8 @@ const Services = () => {
           animationDelay: `${index * 100}ms`
         }}>
               <CardHeader>
-                <div className="w-14 h-14 rounded-lg bg-muted/50 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
-                  <service.icon className={`h-7 w-7 ${service.iconColor}`} />
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+                  <img src={service.icon} alt={`${service.title} icon`} className="w-full h-full object-contain" />
                 </div>
                 <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
                 <CardDescription className="text-base">{service.description}</CardDescription>
