@@ -33,7 +33,7 @@ const Hero = () => {
             <span className="text-sm font-medium bg-gradient-primary bg-clip-text text-transparent">AI-Powered Solutions</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-12 leading-tight animate-fade-in-up" style={{
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 md:mb-12 leading-tight animate-fade-in-up px-4" style={{
           animationDelay: "0.1s"
         }}>
             Elevate Your Business with
@@ -41,7 +41,7 @@ const Hero = () => {
           </h1>
           
           {/* Feature Pills */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in" style={{
+          <div className="flex flex-wrap gap-3 md:gap-4 justify-center mb-8 md:mb-12 animate-fade-in px-4" style={{
           animationDelay: "0.2s"
         }}>
             {[{
@@ -53,25 +53,25 @@ const Hero = () => {
           }, {
             icon: Sparkles,
             text: "AI-Enhanced"
-          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary hover:scale-110 transition-all duration-300 animate-fade-in-up" style={{
+          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-card border border-border hover:border-primary hover:scale-110 transition-all duration-300 animate-fade-in-up" style={{
             animationDelay: `${0.5 + index * 0.1}s`
           }}>
-                <feature.icon className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">{feature.text}</span>
+                <feature.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+                <span className="text-xs md:text-sm font-medium">{feature.text}</span>
               </div>)}
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-40 animate-scale-in" style={{
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-24 md:mb-40 animate-scale-in px-4" style={{
           animationDelay: "0.3s"
         }}>
-            <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-50 px-8 py-6 group animate-glow-pulse text-lg">
+            <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-50 px-6 md:px-8 py-5 md:py-6 group animate-glow-pulse text-base md:text-lg w-full sm:w-auto">
               <a href="#services">
                 Explore Our Services
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-lg px-8 py-6">
+            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto">
               <a href="/contact">Schedule Consultation</a>
             </Button>
           </div>

@@ -23,6 +23,10 @@ const WorldMapAnimation = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Detect mobile device
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -192,7 +196,9 @@ const WorldMapAnimation = () => {
 
       continents.forEach(continent => {
         const area = (continent.xEnd - continent.xStart) * (continent.yEnd - continent.yStart);
-        const dotsInContinent = Math.floor(area * 15000 * (continent.density || 1));
+        // Reduce dots significantly on mobile for better performance
+        let dotsMultiplier = isMobile ? 3000 : isTablet ? 8000 : 15000;
+        const dotsInContinent = Math.floor(area * dotsMultiplier * (continent.density || 1));
         
         for (let i = 0; i < dotsInContinent; i++) {
           const x = continent.xStart + Math.random() * (continent.xEnd - continent.xStart);
@@ -226,11 +232,12 @@ const WorldMapAnimation = () => {
       { x: 0.78, y: 0.64, name: "Sydney" },
     ];
 
-    // Create connections between cities
+    // Create connections between cities (fewer on mobile)
     const connections: [number, number][] = [];
+    const connectionThreshold = isMobile ? 0.75 : isTablet ? 0.7 : 0.65;
     for (let i = 0; i < cities.length; i++) {
       for (let j = i + 1; j < cities.length; j++) {
-        if (Math.random() > 0.65) {
+        if (Math.random() > connectionThreshold) {
           connections.push([i, j]);
         }
       }
@@ -238,8 +245,8 @@ const WorldMapAnimation = () => {
 
     // Animation state
     let animationProgress = 0;
-    const animationSpeed = 0.003;
-    const pulseSpeed = 0.05;
+    const animationSpeed = isMobile ? 0.002 : 0.003;
+    const pulseSpeed = isMobile ? 0.03 : 0.05;
     let pulsePhase = 0;
 
     const animate = () => {
@@ -251,16 +258,20 @@ const WorldMapAnimation = () => {
         const y = dot.y * canvas.height;
         const alpha = dot.brightness * (0.5 + Math.sin(pulsePhase + dot.x * 10) * 0.3);
         
+        // Adjust dot sizes for mobile
+        const glowSize = isMobile ? 2.5 : 3.5;
+        const coreSize = isMobile ? 1.2 : 1.8;
+        
         // Outer glow (orange)
         ctx.fillStyle = `rgba(249, 115, 22, ${alpha * 0.2})`;
         ctx.beginPath();
-        ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+        ctx.arc(x, y, glowSize, 0, Math.PI * 2);
         ctx.fill();
         
         // Core dot (brighter orange)
         ctx.fillStyle = `rgba(249, 115, 22, ${alpha})`;
         ctx.beginPath();
-        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
+        ctx.arc(x, y, coreSize, 0, Math.PI * 2);
         ctx.fill();
       });
 
@@ -301,14 +312,14 @@ const WorldMapAnimation = () => {
           gradient.addColorStop(1, `rgba(249, 115, 22, ${0.6 + Math.sin(pulsePhase + connIdx) * 0.2})`);
           
           ctx.strokeStyle = gradient;
-          ctx.lineWidth = 2;
-          ctx.shadowBlur = 8;
+          ctx.lineWidth = isMobile ? 1.5 : 2;
+          ctx.shadowBlur = isMobile ? 4 : 8;
           ctx.shadowColor = 'rgba(249, 115, 22, 0.6)';
           ctx.beginPath();
           ctx.moveTo(startX, startY);
           
-          // Draw partial curve based on animation progress
-          const segments = 50;
+          // Draw partial curve based on animation progress (fewer segments on mobile)
+          const segments = isMobile ? 30 : 50;
           for (let i = 0; i <= segments * localProgress; i++) {
             const t = i / segments;
             const x = Math.pow(1 - t, 2) * startX + 2 * (1 - t) * t * controlX + Math.pow(t, 2) * endX;
@@ -325,7 +336,8 @@ const WorldMapAnimation = () => {
             const x = Math.pow(1 - t, 2) * startX + 2 * (1 - t) * t * controlX + Math.pow(t, 2) * endX;
             const y = Math.pow(1 - t, 2) * startY + 2 * (1 - t) * t * controlY + Math.pow(t, 2) * endY;
 
-            drawPersonIcon(x, y, 10, 0.9, true);
+            const personSize = isMobile ? 6 : 10;
+            drawPersonIcon(x, y, personSize, 0.9, true);
           }
         }
       });
@@ -336,20 +348,25 @@ const WorldMapAnimation = () => {
         const y = city.y * canvas.height;
         const pulse = Math.sin(pulsePhase + idx * 0.5) * 0.3 + 0.7;
 
+        // Adjust glow sizes for mobile
+        const outerGlowSize = isMobile ? 12 : 18;
+        const mediumGlowSize = isMobile ? 8 : 12;
+
         // Large outer glow ring
         ctx.fillStyle = `rgba(249, 115, 22, ${0.15 * pulse})`;
         ctx.beginPath();
-        ctx.arc(x, y, 18 * pulse, 0, Math.PI * 2);
+        ctx.arc(x, y, outerGlowSize * pulse, 0, Math.PI * 2);
         ctx.fill();
 
         // Medium glow ring
         ctx.fillStyle = `rgba(249, 115, 22, ${0.25 * pulse})`;
         ctx.beginPath();
-        ctx.arc(x, y, 12 * pulse, 0, Math.PI * 2);
+        ctx.arc(x, y, mediumGlowSize * pulse, 0, Math.PI * 2);
         ctx.fill();
 
         // Draw person icon at city location
-        drawPersonIcon(x, y, 12, 0.95 * pulse, true);
+        const personSize = isMobile ? 8 : 12;
+        drawPersonIcon(x, y, personSize, 0.95 * pulse, true);
       });
 
       // Update animation
@@ -374,6 +391,7 @@ const WorldMapAnimation = () => {
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
       style={{ opacity: 0.95 }}
+      aria-label="Animated world map showing global connections"
     />
   );
 };
